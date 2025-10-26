@@ -1,8 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- Couleurs principales --- */
+  --color-primary: #2563EB;
+  /* Bleu acier : fiabilité, rigueur */
+  --color-primary-hover: #1D4ED8;
+  /* Variante hover */
+  --color-secondary: #1E1E1E;
+  /* Gris graphite : lucidité, maîtrise */
+  --color-accent: #EA580C;
+  /* Orange brûlé : énergie, impact */
+  --color-accent-hover: #C2410C;
+  /* Variante hover */
+
+  /* --- Fond et texte --- */
+  --color-bg: #FFFFFF;
+  --color-fg: #171717;
+  --color-border: #E5E7EB;
+
+
+  /* --- Rayons, espacements, typo --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --font-sans: var(--font-geist-sans);
+
+
 }
 
 @theme inline {
@@ -12,15 +37,87 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* 🌑 Thème sombre automatique */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-bg: #0A0A0A;
+    --color-fg: #EDEDED;
+    --color-border: #333;
   }
 }
 
+/* orange brulée #EA580C */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans, Arial, sans-serif);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+@layer components {
+
+  /* 🔘 Bouton principal */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    background-color: var(--color-primary);
+    color: #fff;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+  }
+
+  /* ⚡ Bouton accent (action forte) */
+  .btn-accent {
+    background-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn-accent:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  /* 🏷️ Étiquette / Tag */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background-color: var(--color-border);
+    color: var(--color-fg);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .tag-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  .tag-accent {
+    background-color: var(--color-accent);
+    color: white;
+  }
+
+  /* 🧭 Cartes ou sections */
+  .card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    background-color: var(--color-bg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
 }
