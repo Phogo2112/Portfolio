@@ -1,10 +1,17 @@
 import Image from "next/image";
-import ProjectCard from './components/Cards'
+import ProjectCard, { CleanerTombeCard } from './components/Cards'
+import NavBar from "./components/NavBar";
+import Presentation from "./components/Presentation";
 
 export default function Home() {
   return (
     <>
+
+      <NavBar />
+      <Presentation />
       <ProjectCard />
+      <CleanerTombeCard />
+
     </>
   );
 }
