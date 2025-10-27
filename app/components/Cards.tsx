@@ -9,20 +9,17 @@ export default function ProjectCard() {
         <img
           src="/adaction/connexion-adaction.png"
           alt="image du projets adaction"
-          width={250}
-          height={250}
+          className="w-[250px] h-[400px] object-cover rounded-md"
         />
         <img
           src="/adaction/collecte-adaction.PNG"
           alt="image de la page des collectes de l'applications Adaction"
-          width={250}
-          height={250}
+          className="w-[250px] h-[400px] object-cover rounded-md"
         />
         <img
           src="/adaction/page-wastes-type-adaction.PNG"
           alt="image de la page des collectes de l'applications Adaction"
-          width={250}
-          height={250}
+          className="w-[250px] h-[400px] object-cover rounded-md"
         />
 
       </div>
@@ -58,20 +55,17 @@ export function CleanerTombeCard() {
         <img
           src="/cleanertombe/photo-présentation-cleanertombe.PNG"
           alt="image du projets adaction"
-          width={250}
-          height={400}
+          className="w-[250px] h-[400px] object-cover rounded-md"
         />
         <img
           src="/cleanertombe/blog-cleanertombe.PNG"
           alt="image de la page des collectes de l'applications Adaction"
-          width={250}
-          height={400}
+          className="w-[250px] h-[400px] object-cover rounded-md"
         />
         <img
           src="/cleanertombe/tarif-cleanertombe.PNG"
           alt="image de la page des collectes de l'applications Adaction"
-          width={250}
-          height={400}
+          className="w-[250px] h-[400px] object-cover rounded-md"
         />
 
       </div>
