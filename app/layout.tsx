@@ -1,47 +1,26 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import type { ReactNode } from "react";
 import "./globals.css";
-import { Bitcount_Grid_Single, Comic_Neue } from 'next/font/google'
 
-const bitcount = Bitcount_Grid_Single({
-  subsets: ['latin'],
-  weight: ['100', '400', '700', '900'], // choisis les poids que tu veux
-  variable: '--font-bitcount'
-})
+// Google Fonts
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
-const comicNeue = Comic_Neue({
-  subsets: ['latin'],
-  weight: ['300', '400', '700'],
-  variable: '--font-comic'
-})
+// Ta police Bitcount locale
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
-  title: 'Mon site',
+  title: "Mon site",
   icons: {
-    icon: '/portrait-pour-favicon.ico', // favicon classique
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: "/portrait-pour-favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-}
+};
 
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
