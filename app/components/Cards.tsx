@@ -80,14 +80,10 @@ export function CleanerTombeCard() {
       </div>
 
       <div className="flex gap-2 mt-7">
-        <span className="tag">Next.js</span>
-        <span className="tag bg-yellow-600">Django</span>
-        <span className="tag tag-primary">Tailwind</span>
-        <span className="tag bg-blue-800">postgreSQL</span>
-        <span className="tag bg-amber-50 text-black">REST framework</span>
-        <span className="tag bg-amber-50 text-black">CORS</span>
-        <span className="tag bg-amber-50 text-black">ORM</span>
-
+        <span className="tag bg-yellow-600">Django Template</span>
+        <span className="tag tag-primary">CSS</span>
+        <span className="tag bg-orange-500 text-black">HTML</span>
+        <span className="tag bg-amber-50 text-black">déploiement sur un VPS OVH</span>
       </div>
     </div>
   );
