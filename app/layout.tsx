@@ -1,9 +1,13 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "next-themes"; // 👈 import du provider
+import { Rajdhani } from "next/font/google";
 import "./globals.css";
 
 // Google Fonts
+
+const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-rajdhani" });
+
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
 
@@ -22,7 +26,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr" suppressHydrationWarning> {/* évite les warnings côté client */}
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${rajdhani.variable} antialiased`}>
         {/* 👇 Le ThemeProvider entoure tout ton contenu */}
         <ThemeProvider
           attribute="class"       // ajoute automatiquement 'class="dark"' sur <html>

@@ -21,13 +21,19 @@ export default function Presentation() {
 
   return (
     <div className="">
-      <div className="flex justify-center items-center h-[80vh] flex-col text-6xl "><h1 className="flex justify-center title"> Bienvenue sur mon portfolio !!</h1>  
-      <h2 className="flex justify-center ">Développeur Full Stack </h2></div>
+      <div className="flex justify-center items-center h-[80vh] flex-col text-6xl "><h1 className="flex justify-center title ml-6"> Bienvenue sur mon<span className="text-(--color-accent) mx-6 ">portfolio</span>!!</h1>  
+      <h2 className="flex justify-center ">
+        Développeur 
+        <div className="text-(--color-accent) ml-6">
+          Full Stack
+        </div>
+        </h2>
+        </div>
       <div className="flex  flex-row justify-evenly">
 
-        <ul className="flex flex-row p-2.5">
+        <ul className="flex flex-row p-2.5 mb-2.5">
           {tech.map((items,index)=> (<li className="relative flex items-center justify-center text-2xl font-semibold px-6 py-4 rounded overflow-hidden group">
-  <span className="z-10">{items.name}</span>
+  <span className="z-10 font-tech-700">{items.name}</span>
   <span className="absolute text-[80px] opacity-10 group-hover:opacity-20 transition-all duration-300">
     {items.icon}
   </span>

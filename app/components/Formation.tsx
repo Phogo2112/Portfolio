@@ -6,7 +6,7 @@ export default function Formation(){
             <div className="competence">
             <h3>Ada Tech School Nantes</h3>
             <h4>Compétence et Appétence</h4>
-            <ul>{competence.map((items,index)=> <li key={index}>- {items}</li>)}</ul>
+            <ul>{competence.map((items,index)=> <li key={index} className="font-tech">- {items}</li>)}</ul>
             </div>
             <div>
 

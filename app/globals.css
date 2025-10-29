@@ -30,6 +30,8 @@
 }
 
 :root {
+  /* --- google fonts police Rajdhani --- */
+  --font-rajdhani: "Rajdhani", sans-serif;
   /* --- Couleurs principales --- */
   --color-primary: #2563EB;
   /* Bleu acier : fiabilité, rigueur */
@@ -97,7 +99,21 @@ body {
 }
 
 @layer components {
+.font-tech-700{
+  font-family: var(--font-rajdhani), sans-serif;
+  font-weight: 700;
 
+}
+.font-tech-400{
+  font-family: var(--font-rajdhani), sans-serif;
+  font-weight: 400;
+}
+/* les container */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
   /* 🔘 Bouton principal */
   .btn {
@@ -168,5 +184,5 @@ body {
 .competence{
   border-radius: 10%;
   padding: 30px;
-  
+
 }

@@ -7,13 +7,14 @@ import Formation from "./components/Formation"
 export default function Home() {
   return (
     <>
+    <div className="container-custom">
 
       <NavBar />
       <Presentation />
       <ProjectCard />
       <CleanerTombeCard />
       < Formation/>
-
+</div>
     </>
   );
 }
