@@ -3,7 +3,7 @@ import ProjectCard, { CleanerTombeCard } from './components/Cards'
 import NavBar from "./components/NavBar";
 import Presentation from "./components/Presentation";
 import Formation from "./components/Formation"
-
+import Footers from './components/footer'
 export default function Home() {
   return (
     <>
@@ -14,6 +14,7 @@ export default function Home() {
       <ProjectCard />
       <CleanerTombeCard />
       < Formation/>
+      <Footers/>
 </div>
     </>
   );

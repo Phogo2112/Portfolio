@@ -1,7 +1,20 @@
+"use client";
 import Image from "next/image";
-
+import { useState } from "react";
+import { FaGithub } from "react-icons/fa";
 
 export default function ProjectCard() {
+  function BtnGit({ url }: { url: string }) {
+    return (
+      <a href={url} 
+      className="btn"
+      target="_blank"
+      rel="noopener noreferrer">
+        <FaGithub />Voir sur Github 
+      </a>
+      
+    );
+  }
   return (
     <div className="card">
       <h3 className="text-4xl font-bold mb-2 flex justify-center">Adaction</h3>
@@ -21,16 +34,17 @@ export default function ProjectCard() {
           alt="image de la page des collectes de l'applications Adaction"
           className="w-[250px] h-[400px] object-cover rounded-md"
         />
-
       </div>
 
       <p className="text-white mb-4">
-        Un projets liant le back le front et l'utilisation des base de donnée avec postgreSQL, manipulation du CRUD avec un ORM. Utilisation du REST framework de django pour faire les requete API entre le front et le back.
+        Un projets liant le back le front et l'utilisation des base de donnée
+        avec postgreSQL, manipulation du CRUD avec un ORM. Utilisation du REST
+        framework de django pour faire les requete API entre le front et le
+        back.
       </p>
 
       <div className="flex gap-2">
-        <a href="/projects/adaction" className="btn">Voir plus</a>
-        <a href="https://github.com/Phogo2112/adaction-API.git" className="btn btn-accent">Code</a>
+        <BtnGit url="https://github.com/Phogo2112/adaction-API.git" />
       </div>
 
       <div className="flex gap-2 mt-7">
@@ -41,7 +55,6 @@ export default function ProjectCard() {
         <span className="tag bg-amber-50 text-black">REST framework</span>
         <span className="tag bg-amber-50 text-black">CORS</span>
         <span className="tag bg-amber-50 text-black">ORM</span>
-
       </div>
     </div>
   );
@@ -67,23 +80,34 @@ export function CleanerTombeCard() {
           alt="image de la page des collectes de l'applications Adaction"
           className="w-[250px] h-[400px] object-cover rounded-md"
         />
-
       </div>
 
       <p className="text-white mb-4">
-        Un projets liant le back le front et l'utilisation des base de donnée avec postgreSQL, manipulation du CRUD avec un ORM. Utilisation du REST framework de django pour faire les requete API entre le front et le back.
+        Un projets liant le back le front et l'utilisation des base de donnée
+        avec postgreSQL, manipulation du CRUD avec un ORM. Utilisation du REST
+        framework de django pour faire les requete API entre le front et le
+        back.
       </p>
 
       <div className="flex gap-2">
-        <a href="/projects/adaction" className="btn">Voir plus</a>
-        <a href="https://github.com/Phogo2112/adaction-API.git" className="btn btn-accent">Code</a>
+        <a href="/projects/adaction" className="btn">
+          Voir plus
+        </a>
+        <a
+          href="https://github.com/Phogo2112/adaction-API.git"
+          className="btn btn-accent"
+        >
+          Code
+        </a>
       </div>
 
       <div className="flex gap-2 mt-7">
         <span className="tag bg-yellow-600">Django Template</span>
         <span className="tag tag-primary">CSS</span>
         <span className="tag bg-orange-500 text-black">HTML</span>
-        <span className="tag bg-amber-50 text-black">déploiement sur un VPS OVH</span>
+        <span className="tag bg-amber-50 text-black">
+          déploiement sur un VPS OVH
+        </span>
       </div>
     </div>
   );
