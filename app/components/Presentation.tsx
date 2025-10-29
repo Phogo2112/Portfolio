@@ -26,7 +26,12 @@ export default function Presentation() {
       <div className="flex  flex-row justify-evenly">
 
         <ul className="flex flex-row p-2.5">
-          {tech.map((items,index)=> (<li key={index} className="text-xl font-medium bg-[var(--color-secondary)] text-[var(--color-primary)] px-4 py-2 rounded hover:bg-[var(--color-primary)] hover:text-[var(--color-secondary)] transition-all duration-300">{items.icon} <span>{items.name}</span></li>))}
+          {tech.map((items,index)=> (<li className="relative flex items-center justify-center text-2xl font-semibold px-6 py-4 rounded overflow-hidden group">
+  <span className="z-10">{items.name}</span>
+  <span className="absolute text-[80px] opacity-10 group-hover:opacity-20 transition-all duration-300">
+    {items.icon}
+  </span>
+</li>))}
           
         </ul>
       </div>
