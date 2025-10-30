@@ -31,7 +31,7 @@ export default function ContactForm() {
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           {/* NOM + PRENOM */}
-          <div className="flex flex-row ">
+          <div className="flex flex-row gap-2">
             <div>
               <label
                 htmlFor="name"
