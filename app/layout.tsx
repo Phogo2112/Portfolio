@@ -6,10 +6,17 @@ import "./globals.css";
 
 // Google Fonts
 
-const rajdhani = Rajdhani({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-rajdhani" });
+const rajdhani = Rajdhani({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-rajdhani",
+});
 
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
-const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
 
 // Meta infos
 export const metadata = {
@@ -25,13 +32,17 @@ export const metadata = {
 // ✅ Root Layout avec Dark Mode activé
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="fr" suppressHydrationWarning> {/* évite les warnings côté client */}
-      <body className={`${geistSans.variable} ${geistMono.variable} ${rajdhani.variable} antialiased`}>
+    <html lang="fr">
+      {" "}
+      {/* évite les warnings côté client */}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${rajdhani.variable} antialiased`}
+      >
         {/* 👇 Le ThemeProvider entoure tout ton contenu */}
         <ThemeProvider
-          attribute="class"       // ajoute automatiquement 'class="dark"' sur <html>
-          defaultTheme="system"   // suit le thème du système (clair/sombre)
-          enableSystem={true}     // autorise le mode auto selon le système
+          attribute="class"
+          defaultTheme="system"
+          enableSystem={true}
         >
           {children}
         </ThemeProvider>

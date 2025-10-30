@@ -33,22 +33,21 @@
   /* --- google fonts police Rajdhani --- */
   --font-rajdhani: "Rajdhani", sans-serif;
   /* --- Couleurs principales --- */
-  --color-primary: #2563EB;
+  --color-primary: #2563eb;
   /* Bleu acier : fiabilité, rigueur */
-  --color-primary-hover: #1D4ED8;
+  --color-primary-hover: #1d4ed8;
   /* Variante hover */
-  --color-secondary: #1E1E1E;
+  --color-secondary: #1e1e1e;
   /* Gris graphite : lucidité, maîtrise */
-  --color-accent: #EA580C;
+  --color-accent: #ea580c;
   /* Orange brûlé : énergie, impact */
-  --color-accent-hover: #C2410C;
+  --color-accent-hover: #c2410c;
   /* Variante hover */
 
   /* --- Fond et texte --- */
-  --color-bg: #FFFFFF;
+  --color-bg: #ffffff;
   --color-fg: #171717;
-  --color-border: #E5E7EB;
-
+  --color-border: #e5e7eb;
 
   /* --- Rayons, espacements, typo --- */
   --radius-sm: 0.25rem;
@@ -57,8 +56,6 @@
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --font-sans: var(--font-geist-sans);
-
-
 }
 
 @theme inline {
@@ -71,12 +68,20 @@
 /* 🌑 Thème sombre automatique */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0A0A0A;
-    --color-fg: #EDEDED;
+    --color-bg: #0a0a0a;
+    --color-fg: #ededed;
     --color-border: #333;
   }
 }
-
+.secondary {
+  color: var(--color-secondary);
+}
+.accent {
+  color: var(--color-accent);
+}
+.primary {
+  color: var(--color-primary);
+}
 .navbar,
 h1,
 h2,
@@ -99,21 +104,20 @@ body {
 }
 
 @layer components {
-.font-tech-700{
-  font-family: var(--font-rajdhani), sans-serif;
-  font-weight: 700;
-
-}
-.font-tech-400{
-  font-family: var(--font-rajdhani), sans-serif;
-  font-weight: 400;
-}
-/* les container */
-.container-custom {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
+  .font-tech-700 {
+    font-family: var(--font-rajdhani), sans-serif;
+    font-weight: 700;
+  }
+  .font-tech-400 {
+    font-family: var(--font-rajdhani), sans-serif;
+    font-weight: 400;
+  }
+  /* les container */
+  .container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
   /* 🔘 Bouton principal */
   .btn {
@@ -181,8 +185,7 @@ body {
   }
 }
 
-.competence{
+.competence {
   border-radius: 10%;
   padding: 30px;
-
 }

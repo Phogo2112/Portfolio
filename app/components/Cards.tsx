@@ -6,13 +6,10 @@ import { FaGithub } from "react-icons/fa";
 export default function ProjectCard() {
   function BtnGit({ url }: { url: string }) {
     return (
-      <a href={url} 
-      className="btn"
-      target="_blank"
-      rel="noopener noreferrer">
-        <FaGithub />Voir sur Github 
+      <a href={url} className="btn" target="_blank" rel="noopener noreferrer">
+        <FaGithub />
+        Voir sur Github
       </a>
-      
     );
   }
   return (
