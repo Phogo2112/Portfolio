@@ -1,9 +1,25 @@
-"use client";
-import Image from "next/image";
-import { useState } from "react";
-import { FaGithub } from "react-icons/fa";
 
-export default function ProjectCard() {
+import Image from "next/image";
+
+import { FaGithub } from "react-icons/fa";
+import { getTagColor } from "../lib/getProjectsCards";
+type ProjectCardProps = {
+  title: string;
+  description: string;
+  images: string[];
+  githubUrl?: string;
+  demoUrl?: string;
+  tags: string[];
+};
+
+export default function ProjectCard({
+  title,
+  description,
+  images,
+  githubUrl,
+  demoUrl,
+  tags,
+}: ProjectCardProps) {
   function BtnGit({ url }: { url: string }) {
     return (
       <a href={url} className="btn" target="_blank" rel="noopener noreferrer">
@@ -12,46 +28,49 @@ export default function ProjectCard() {
       </a>
     );
   }
+
   return (
     <div className="card">
-      <h3 className="text-4xl font-bold mb-2 flex justify-center">Adaction</h3>
+      {/* titre dynamique */}
+      <h3 className="text-4xl font-bold mb-2 flex justify-center">{title}</h3>
+
+      {/* images dynamiques */}
       <div className="flex flex-row justify-center gap-4">
-        <img
-          src="/adaction/connexion-adaction.png"
-          alt="image du projets adaction"
-          className="w-[250px] h-[400px] object-cover rounded-md"
-        />
-        <img
-          src="/adaction/collecte-adaction.PNG"
-          alt="image de la page des collectes de l'applications Adaction"
-          className="w-[250px] h-[400px] object-cover rounded-md"
-        />
-        <img
-          src="/adaction/page-wastes-type-adaction.PNG"
-          alt="image de la page des collectes de l'applications Adaction"
-          className="w-[250px] h-[400px] object-cover rounded-md"
-        />
+        {images?.map((src) => (
+          <img
+            key={src}
+            src={src}
+            alt={`image du projet ${title}`}
+            className="w-[250px] h-[400px] object-cover rounded-md"
+          />
+        ))}
       </div>
 
-      <p className="text-white mb-4">
-        Un projets liant le back le front et l'utilisation des base de donnée
-        avec postgreSQL, manipulation du CRUD avec un ORM. Utilisation du REST
-        framework de django pour faire les requete API entre le front et le
-        back.
-      </p>
+      {/* description dynamique */}
+      <p className="text-white mb-4">{description}</p>
 
+      {/* boutons */}
       <div className="flex gap-2">
-        <BtnGit url="https://github.com/Phogo2112/adaction-API.git" />
+        {githubUrl && <BtnGit url={githubUrl} />}
+        {demoUrl && (
+          <a
+            href={demoUrl}
+            className="btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Voir plus
+          </a>
+        )}
       </div>
 
-      <div className="flex gap-2 mt-7">
-        <span className="tag">Next.js</span>
-        <span className="tag bg-yellow-600">Django</span>
-        <span className="tag tag-primary">Tailwind</span>
-        <span className="tag bg-blue-800">postgreSQL</span>
-        <span className="tag bg-amber-50 text-black">REST framework</span>
-        <span className="tag bg-amber-50 text-black">CORS</span>
-        <span className="tag bg-amber-50 text-black">ORM</span>
+      {/* tags */}
+      <div className="flex gap-2 mt-7 flex-wrap justify-center">
+        {tags.map((tag, index) => (
+          <span key={tag} className={`tag ${getTagColor(tag)}`}>
+            {tag}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -59,53 +78,11 @@ export default function ProjectCard() {
 
 export function CleanerTombeCard() {
   return (
-    <div className="card h-[90vh] bg-blue-500">
-      <h3 className="text-4xl font-bold mb-2 flex justify-center">Adaction</h3>
-      <div className="flex flex-row justify-center gap-4">
-        <img
-          src="/cleanertombe/photo-présentation-cleanertombe.PNG"
-          alt="image du projets adaction"
-          className="w-[250px] h-[400px] object-cover rounded-md"
-        />
-        <img
-          src="/cleanertombe/blog-cleanertombe.PNG"
-          alt="image de la page des collectes de l'applications Adaction"
-          className="w-[250px] h-[400px] object-cover rounded-md"
-        />
-        <img
-          src="/cleanertombe/tarif-cleanertombe.PNG"
-          alt="image de la page des collectes de l'applications Adaction"
-          className="w-[250px] h-[400px] object-cover rounded-md"
-        />
-      </div>
-
-      <p className="text-white mb-4">
-        Un projets liant le back le front et l'utilisation des base de donnée
-        avec postgreSQL, manipulation du CRUD avec un ORM. Utilisation du REST
-        framework de django pour faire les requete API entre le front et le
-        back.
-      </p>
-
-      <div className="flex gap-2">
-        <a href="/projects/adaction" className="btn">
-          Voir plus
-        </a>
-        <a
-          href="https://github.com/Phogo2112/adaction-API.git"
-          className="btn btn-accent"
-        >
-          Code
-        </a>
-      </div>
-
-      <div className="flex gap-2 mt-7">
-        <span className="tag bg-yellow-600">Django Template</span>
-        <span className="tag tag-primary">CSS</span>
-        <span className="tag bg-orange-500 text-black">HTML</span>
-        <span className="tag bg-amber-50 text-black">
-          déploiement sur un VPS OVH
-        </span>
-      </div>
-    </div>
+    <ProjectCard
+      title="Cleaner Tombe"
+      description="Application de démonstration pour présenter un projet spécifique."
+      images={[]}
+      tags={[]}
+    />
   );
 }

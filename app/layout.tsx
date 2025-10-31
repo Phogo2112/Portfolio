@@ -29,16 +29,14 @@ export const metadata = {
   },
 };
 
-// ✅ Root Layout avec Dark Mode activé
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
       {" "}
-      {/* évite les warnings côté client */}
       <body
+        // import des variable de fonts ici
         className={`${geistSans.variable} ${geistMono.variable} ${rajdhani.variable} antialiased`}
       >
-        {/* 👇 Le ThemeProvider entoure tout ton contenu */}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
