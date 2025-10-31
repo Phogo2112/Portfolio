@@ -33,6 +33,7 @@ export default function ProjectCard({
     <div className="card">
       {/* titre dynamique */}
       <h3 className="text-4xl font-bold mb-2 flex justify-center">{title}</h3>
+      <p className="text-white mb-4">{description}</p>
 
       {/* images dynamiques */}
       <div className="flex flex-row justify-center gap-4">
@@ -46,8 +47,8 @@ export default function ProjectCard({
         ))}
       </div>
 
-      {/* description dynamique */}
-      <p className="text-white mb-4">{description}</p>
+
+
 
       {/* boutons */}
       <div className="flex gap-2">
@@ -59,7 +60,7 @@ export default function ProjectCard({
             target="_blank"
             rel="noopener noreferrer"
           >
-            Voir plus
+            Vers le site
           </a>
         )}
       </div>
