@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-
+// couleur bg donner au tags langage tech
 export function getTagColor(tag: string): string {
   const colors: Record<string, string> = {
     "Next.js": "bg-gray-700 text-white",

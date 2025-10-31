@@ -26,6 +26,7 @@ export default function Home() {
           title="Cleaner Tombe"
           description="Site Django Templates, CSS et déploiement sur OVH."
           images={cleanerTombeImages}
+          demoUrl="https://cleanertombe.fr"
           githubUrl="https://github.com/Phogo2112/cleanertombe.git"
           tags={["Django Template", "CSS", "HTML", "Déploiement OVH"]}
         />
