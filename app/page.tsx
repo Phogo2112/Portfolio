@@ -27,7 +27,7 @@ export default function Home() {
           />
 
           <ProjectCard
-            title="Cleaner Tombe"
+            title="CleanerTombe"
             description="Projets Réaliser en Autodidact. Création de mon site internet pour mon entreprise personnelle avec un déploiement sur un VPS OVH en https. Utilisation des article dans django Template, mise en place de la stack lien entre les app django."
             images={cleanerTombeImages}
             demoUrl="https://cleanertombe.fr"
