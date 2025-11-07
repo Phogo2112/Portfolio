@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import ProjectCard, { CleanerTombeCard } from "./components/Cards";
 import NavBar from "./components/NavBar";
@@ -13,26 +14,32 @@ export default function Home() {
     <>
       <div className="container-custom">
         <NavBar />
-        <Presentation />
-        <ProjectCard
-          title="Adaction"
-          description="Un projet liant le back, le front et la base de données PostgreSQL."
-          images={adactionImages}
-          githubUrl="https://github.com/Phogo2112/adaction-API.git"
-          tags={["Next.js", "Django", "Tailwind", "PostgreSQL", "REST framework", "CORS", "ORM"]}
-        />
+        <section id="about">
+          <Presentation />
+        </section>
+        <section id="projects">
+          <ProjectCard
+            title="Adaction"
+            description="Un projet liant le back, le front et la base de données PostgreSQL."
+            images={adactionImages}
+            githubUrl="https://github.com/Phogo2112/adaction-API.git"
+            tags={["Next.js", "Django", "Tailwind", "PostgreSQL", "REST framework", "CORS", "ORM"]}
+          />
 
-        <ProjectCard
-          title="Cleaner Tombe"
-          description="Projets Réaliser en Autodidact. Création de mon site internet pour mon entreprise personnelle avec un déploiement sur un VPS OVH en https. Utilisation des article dans django Template, mise en place de la stack lien entre les app django."
-          images={cleanerTombeImages}
-          demoUrl="https://cleanertombe.fr"
-          githubUrl="https://github.com/Phogo2112/cleanertombe.git"
-          tags={["Django Template", "CSS", "HTML", "Déploiement OVH"]}
-        />
-        <Formation />
-        <ContactForm />
-        <Footer />
+          <ProjectCard
+            title="Cleaner Tombe"
+            description="Projets Réaliser en Autodidact. Création de mon site internet pour mon entreprise personnelle avec un déploiement sur un VPS OVH en https. Utilisation des article dans django Template, mise en place de la stack lien entre les app django."
+            images={cleanerTombeImages}
+            demoUrl="https://cleanertombe.fr"
+            githubUrl="https://github.com/Phogo2112/cleanertombe.git"
+            tags={["Django Template", "CSS", "HTML", "Déploiement OVH"]}
+          />
+          <Formation />
+        </section>
+        <section id="contact">
+          <ContactForm />
+          <Footer />
+        </section>
       </div>
     </>
   );

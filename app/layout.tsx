@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
-// Meta infos
+
 export const metadata = {
   title: "Portfolio - Sulyvann Dain",
   description: "Développeur Full Stack Passionnée.",
@@ -32,9 +32,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="fr">
-      {" "}
       <body
-        // import des variable de fonts ici
         className={`${geistSans.variable} ${geistMono.variable} ${rajdhani.variable} antialiased`}
       >
         <ThemeProvider
