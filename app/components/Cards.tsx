@@ -1,8 +1,6 @@
 
-import Image from "next/image";
-
 import { FaGithub } from "react-icons/fa";
-import { getTagColor } from "../lib/getProjectsCards";
+
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -11,6 +9,28 @@ type ProjectCardProps = {
   demoUrl?: string;
   tags: string[];
 };
+function getTagColor(tag: string): string {
+  switch (tag.toLowerCase()) {
+    case "next.js":
+      return "bg-black text-white";
+    case "django":
+      return "bg-green-700 text-white";
+    case "tailwind":
+    case "tailwindcss":
+      return "bg-blue-400 text-white";
+    case "postgresql":
+      return "bg-blue-800 text-white";
+    case "html":
+      return "bg-orange-500 text-white";
+    case "css":
+      return "bg-blue-500 text-white";
+    case "orm":
+    case "rest framework":
+      return "bg-purple-600 text-white";
+    default:
+      return "bg-gray-600 text-white"; // couleur par défaut
+  }
+}
 
 export default function ProjectCard({
   title,
@@ -36,44 +56,48 @@ export default function ProjectCard({
       <p className="text-white mb-4">{description}</p>
 
       {/* images dynamiques */}
-      <div className="flex flex-row justify-center gap-4">
-        {images?.map((src) => (
-          <img
-            key={src}
-            src={src}
-            alt={`image du projet ${title}`}
-            className="w-[250px] h-[400px] object-cover rounded-md"
-          />
-        ))}
-      </div>
+      <div >{/* modifier le contenue pour déplié et replié les photo du projets. */}
 
+        <div className="flex flex-row justify-center gap-4">
+          {images?.map((src) => (
+            <img
+              key={src}
+              src={src}
+              alt={`image du projet ${title}`}
+              className="w-[250px] h-[400px] object-cover rounded-md"
+            />
+          ))}
+        </div>
+      </div>
 
 
 
       {/* boutons */}
-      <div className="flex gap-2">
-        {githubUrl && <BtnGit url={githubUrl} />}
-        {demoUrl && (
-          <a
-            href={demoUrl}
-            className="btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vers le site
-          </a>
-        )}
-      </div>
+      <div className="mt-5">
+        <div className="flex gap-2">
+          {githubUrl && <BtnGit url={githubUrl} />}
+          {demoUrl && (
+            <a
+              href={demoUrl}
+              className="btn bg-[var(--color-accent)]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visité le site
+            </a>
+          )}
+        </div>
 
-      {/* tags */}
-      <div className="flex gap-2 mt-7 flex-wrap justify-center">
-        {tags.map((tag, index) => (
-          <span key={tag} className={`tag ${getTagColor(tag)}`}>
-            {tag}
-          </span>
-        ))}
+        {/* tags */}
+        <div className="flex gap-2 mt-7 flex-wrap justify-center">
+          {tags.map((tag, index) => (
+            <span key={tag} className={`tag ${getTagColor(tag)}`}>
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
-    </div>
+    </div >
   );
 }
 

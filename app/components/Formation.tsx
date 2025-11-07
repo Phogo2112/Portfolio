@@ -1,13 +1,16 @@
+
+const formation = ["Ada Tech School Nantes", "BTP CFA", "Louis Armand"]
+
 export default function Formation() {
-  const competence = ["Réactif", "Prise de décision", "capacité d'analyse", ""];
+  const competence = ["Réactif", "Prise de décision", "capacité d'analyse", "Actifs", "Organisé"];
   return (
     <div>
       <div className="competence">
         <h3>Ada Tech School Nantes</h3>
         <h4>Compétence et Appétence</h4>
-        <ul>
+        <ul >
           {competence.map((items, index) => (
-            <li key={index} className="font-tech">
+            <li className="font-tech tag" key={index}>
               - {items}
             </li>
           ))}

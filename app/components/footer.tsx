@@ -1,8 +1,8 @@
 "use client";
-import { useState } from "react";
+
 import { FaGithub } from "react-icons/fa";
 
-export default function Footers() {
+export default function Footer() {
   return (
     <footer>
       <ul>
@@ -11,9 +11,6 @@ export default function Footers() {
             <FaGithub /> mon Github
           </a>
         </li>
-        <li></li>
-        <li></li>
-        <li></li>
       </ul>
     </footer>
   );

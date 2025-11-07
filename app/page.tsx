@@ -3,9 +3,9 @@ import ProjectCard, { CleanerTombeCard } from "./components/Cards";
 import NavBar from "./components/NavBar";
 import Presentation from "./components/Presentation";
 import Formation from "./components/Formation";
-import Footers from "./components/Footer";
+import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
-import { getProjectImages } from "./lib/getProjectsCards";
+import { getProjectImages } from "./data/Projects";
 export default function Home() {
   const adactionImages = getProjectImages("adaction");
   const cleanerTombeImages = getProjectImages("cleanertombe");
@@ -32,7 +32,7 @@ export default function Home() {
         />
         <Formation />
         <ContactForm />
-        <Footers />
+        <Footer />
       </div>
     </>
   );

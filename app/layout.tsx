@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
-import { ThemeProvider } from "next-themes"; // 👈 import du provider
+import { ThemeProvider } from "next-themes";
 import { Rajdhani } from "next/font/google";
 import "./globals.css";
 
