@@ -65,7 +65,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* 🌑 Thème sombre automatique */
+/* Thème sombre automatique grace au settings du système d'exploitation*/
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #0a0a0a;
@@ -73,15 +73,19 @@
     --color-border: #333;
   }
 }
+
 .secondary {
   color: var(--color-secondary);
 }
+
 .accent {
   color: var(--color-accent);
 }
+
 .primary {
   color: var(--color-primary);
 }
+
 .navbar,
 h1,
 h2,
@@ -108,10 +112,12 @@ body {
     font-family: var(--font-rajdhani), sans-serif;
     font-weight: 700;
   }
+
   .font-tech-400 {
     font-family: var(--font-rajdhani), sans-serif;
     font-weight: 400;
   }
+
   /* les container */
   .container-custom {
     max-width: 1200px;
