@@ -31,7 +31,7 @@ export default function NavBar() {
 
   return (
     <div>
-      <nav className={`w-full flex items-center justify-between px-8 py-4" ${isVisible ? "translate-y-0" : "-translate-y-full"} shadow-md`}>
+      <nav className={`w-full flex items-center justify-between px-8 py-4 mt-3" ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
         <h2 className="text-black text-[25px] absolute mt-10" >Porfolio <br /> <span className="text-(--color-accent)">Sulyvann</span> Dain</h2>
 
         <div className="container mx-auto px-4 flex justify-end">
