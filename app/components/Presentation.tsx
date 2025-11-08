@@ -13,15 +13,15 @@ import {
 
 export default function Presentation() {
   const tech = [
-    { name: "Python", icon: <FaPython className="text-yellow-400" /> },
-    { name: "Django", icon: <SiDjango className="text-green-500" /> },
-    { name: "React", icon: <FaReact className="text-cyan-400" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="text-gray-200" /> },
-    { name: "Tailwind", icon: <SiTailwindcss className="text-sky-400" /> },
-    { name: "HTML", icon: <SiHtml5 className="text-orange-500" /> },
-    { name: "CSS", icon: <SiCss3 className="text-blue-500" /> },
-    { name: "JavaScript", icon: <SiJavascript className="text-yellow-300" /> },
-    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" /> },
+    { name: "Python", icon: <FaPython className="text-yellow-400" />, url: 'https://developer.mozilla.org/en-US/docs/Glossary/Python' },
+    { name: "Django", icon: <SiDjango className="text-green-500" />, url: 'https://developer.mozilla.org/fr/docs/Learn_web_development/Extensions/Server-side/Django' },
+    { name: "React", icon: <FaReact className="text-cyan-400" />, url: 'https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started' },
+    { name: "Next.js", icon: <SiNextdotjs className="text-gray-200" />, url: 'https://nextjs.org/docs' },
+    { name: "Tailwind", icon: <SiTailwindcss className="text-sky-400" />, url: 'https://v2.tailwindcss.com/docshttps://developer.mozilla.org/en-US/docs/Glossary/Python' },
+    { name: "HTML", icon: <SiHtml5 className="text-orange-500" />, url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+    { name: "CSS", icon: <SiCss3 className="text-blue-500" />, url: 'https://developer.mozilla.org/fr/docs/Web/CSS' },
+    { name: "JavaScript", icon: <SiJavascript className="text-yellow-300" />, url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript' },
+    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" />, url: 'https://www.postgresql.org/docs' },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
   useEffect(() => {
@@ -47,10 +47,8 @@ export default function Presentation() {
         <ul className="flex flex-row p-2.5 mb-2.5">
           {tech.map((items, index) => (
             <li key={items.name}
-              className={`relative flex items-center justify-center text-2xl font-semibold mx-3 px-3 py-4 rounded overflow-hidden group 
-    bg-gray-100 /60 dark:bg-transparent
-    border dark:border-transparent dark:${activeIndex === index ? "opacity-30" : "opacity-10"}`}>
-              <span className="z-10 font-tech-700">{items.name}</span>
+              className={`relative flex items-center justify-center text-2xl font-semibold mx-3 px-3 py-4 rounded overflow-hidden group bg-gray-100 /60 dark:bg-transparent border dark:border-transparent dark:${activeIndex === index ? "opacity-30" : "opacity-10"}`}>
+              <span className="z-10 font-tech-700"><a href={`${items.url}`}>{items.name}</a></span>
               <span className="absolute text-[80px] opacity-50 group-hover:opacity-80 dark:opacity-10 dark:group-hover:opacity-30 transition-all duration-300">
                 {items.icon}
               </span>
