@@ -43,8 +43,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           enableSystem={true}
         >
           {children}
+          <SpeedInsightClient />
         </ThemeProvider>
-        <SpeedInsightClient />
+
       </body>
     </html>
   );
