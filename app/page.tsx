@@ -13,10 +13,12 @@ export default function Home() {
   return (
     <>
       <div className="container-custom">
-        <NavBar />
-        <section id="about">
-          <Presentation />
-        </section>
+        <div className="min-h-screen">
+          <NavBar />
+          <section id="about">
+            <Presentation />
+          </section>
+        </div>
         <section id="projects">
           <ProjectCard
             title="Adaction"

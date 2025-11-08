@@ -27,7 +27,7 @@ export const ProjectsData = [
     id: "cleanertombe",
     title: "Cleaner Tombe",
     description: "Site Django Templates déployé sur OVH.",
-    images: ["/cleanertombe/photo1.png", "/cleanertombe/blog.png"],
+    images: ["/cleanertombe/blog-cleanertombe.PNG", "/cleanertombe/photo-présentation-cleanertombe.PNG", "/cleanertombe/tarif-cleanertombe.PNG"],
     githubUrl: "https://github.com/Phogo2112/cleanertombe.git",
 
     tags: ["Django", "HTML", "OVH"]
