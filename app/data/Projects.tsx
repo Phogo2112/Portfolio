@@ -15,7 +15,7 @@ export const ProjectsData = [
     title: "Adaction",
     description: "Projet fullstack Django + Next.js",
     images: [
-      "/adaction/connexion-adaction.png",
+      "/adaction/connexion-adaction.PNG",
       "/adaction/collecte-adaction.PNG",
       "/adaction/page-wastes-type-adaction.PNG",
     ],

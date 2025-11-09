@@ -28,7 +28,7 @@ function getTagColor(tag: string): string {
     case "rest framework":
       return "bg-purple-600 text-white";
     default:
-      return "bg-gray-600 text-white"; // couleur par défaut
+      return "bg-gray-600 text-white";
   }
 }
 

@@ -3,36 +3,40 @@ import { useState, useEffect } from "react";
 
 
 export default function NavBar() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScroll, setLastScroll] = useState(0);
-
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScroll = window.scrollY;
-
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scroll vers le bas → cacher navbar
-        setIsVisible(false);
+    const controlNavbar = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 200) {
+        // On descend → cacher la navbar
+        setShowNavbar(false);
       } else {
-        // Scroll vers le haut → afficher navbar
-        setIsVisible(true);
+        // On monte → afficher la navbar
+        setShowNavbar(true);
       }
-
-      setLastScroll(currentScroll);
+      setLastScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScroll]);
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
+
   return (
     <div>
-      <nav className={`w-full flex items-center justify-between px-8 py-4 mt-3" ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
-        <h2 className="text-black text-[25px] absolute mt-10" >Porfolio <br /> <span className="text-(--color-accent)">Sulyvann</span> Dain</h2>
+      <nav className={`fixed top-0 left-0 w-full flex items-center justify-between px-8 py-3  transition-all duration-500 ease-in-out
+        backdrop-blur-md dark:text-[var(--color-primary)] bg-white" ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}>
+        <h2 className="text-2xl md:text-3xl font-bold">
+          <span className="block md:inline text-[var(--color-accent)]">Portfolio</span> Sulyvann Dain
+        </h2>
 
         <div className="container mx-auto px-4 flex justify-end">
           <ul className="flex items-center justify-center gap-4 text-black h-8 ">
