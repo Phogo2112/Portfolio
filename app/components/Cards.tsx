@@ -1,5 +1,8 @@
-
+'use client'
 import { FaGithub } from "react-icons/fa";
+import { useState } from "react";
+
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 type ProjectCardProps = {
   title: string;
@@ -40,6 +43,13 @@ export default function ProjectCard({
   demoUrl,
   tags,
 }: ProjectCardProps) {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [showImages, setShowImages] = useState(false);
+
+  const prevImage = () =>
+    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  const nextImage = () =>
+    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   function BtnGit({ url }: { url: string }) {
     return (
       <a href={url} className="btn" target="_blank" rel="noopener noreferrer">
@@ -50,44 +60,71 @@ export default function ProjectCard({
   }
 
   return (
-    <div className="card">
-      {/* titre dynamique */}
-      <h3 className=" sm:text-xl text-4xl font-bold mb-2 flex justify-center">{title}</h3>
-      <p className="text-white mb-4">{description}</p>
+    <div className="py-4">
+      <div className="card">
+        <button
+          onClick={() => setShowImages(!showImages)}
+          className="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full transition"
+          title={showImages ? "Replier les images" : "Déplier les images"}
+        >
+          {showImages ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+        </button>
+        {/* Titre */}
+        <h3 className="sm:text-xl text-4xl font-bold mb-2 flex justify-center">
+          {title}
+        </h3>
+        <p className="text-white mb-4 text-center">{description}</p>
 
-      {/* images dynamiques */}
-      <div >{/* modifier le contenue pour déplié et replié les photo du projets. */}
+        {/* Section images */}
+        {showImages && (
+          <div className="mt-4">
+            {images.length > 0 ? (
+              <>
+                {/* 📱 Mobile : une image à la fois + flèches */}
+                <div className="relative flex justify-center items-center w-full lg:hidden">
+                  <img
+                    key={images[currentImage]}
+                    src={images[currentImage]}
+                    alt={`image ${currentImage + 1} du projet ${title}`}
+                    className="w-[250px] h-[400px] object-cover rounded-md transition-all duration-500"
+                  />
 
-        <div className="flex  flex-row justify-center gap-4">
-          {images?.map((src) => (
-            <img
-              key={src}
-              src={src}
-              alt={`image du projet ${title}`}
-              className="w-[250px] h-[400px] object-cover rounded-md"
-            />
-          ))}
-        </div>
-      </div>
+                  {/* Flèche gauche (mobile only) */}
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-2 bg-gray-800/50 hover:bg-gray-800 text-white p-2 rounded-full transition"
+                  >
+                    ←
+                  </button>
 
+                  {/* Flèche droite (mobile only) */}
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-2 bg-gray-800/50 hover:bg-gray-800 text-white p-2 rounded-full transition"
+                  >
+                    →
+                  </button>
+                </div>
 
-
-      {/* boutons */}
-      <div className="mt-5">
-        <div className="flex gap-2">
-          {githubUrl && <BtnGit url={githubUrl} />}
-          {demoUrl && (
-            <a
-              href={demoUrl}
-              className="btn bg-[var(--color-accent)]"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visité le site
-            </a>
-          )}
-        </div>
-
+                {/* 💻 Desktop : toutes les images côte à côte */}
+                <div className="hidden lg:flex justify-center gap-4">
+                  {images.map((src) => (
+                    <img
+                      key={src}
+                      src={src}
+                      alt={`image du projet ${title}`}
+                      className="w-[250px] h-[400px] object-cover rounded-md"
+                    />
+                  ))}
+                </div>
+              </>
+            ) : (
+              <div className="text-gray-400 text-center">
+                Aucune image disponible
+              </div>
+            )}
+          </div>
+        )}
         {/* tags */}
         <div className="flex gap-2 mt-7 flex-wrap justify-center">
           {tags.map((tag, index) => (
@@ -97,7 +134,10 @@ export default function ProjectCard({
           ))}
         </div>
       </div>
-    </div >
+
+
+    </div>
+
   );
 }
 

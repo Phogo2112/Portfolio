@@ -32,6 +32,14 @@ export const ProjectsData = [
 
     tags: ["Django", "HTML", "OVH"]
   },
+  {
+    id: "QRcode",
+    title: "Script QRcode",
+    description: "Scripts de création de QRcode simple et fonctionnelle grace a une librairie python et un petit scripts.",
+    images: ["/QRcode/Scripts.PNG", "create-QRcode.PNG",],
+    // ajouts de l'url du repos github.
+    tags: ["python"],
+  },
 ];
 export function getProjectImages(projectId: string): string[] {
   const project = ProjectsData.find((p) => p.id === projectId);
