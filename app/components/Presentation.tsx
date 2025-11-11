@@ -36,10 +36,10 @@ export default function Presentation() {
         <h1 className=" flex justify-center title ml-6">
           {" "}
           Bienvenue sur mon
-          <span className="text-(--color-accent)  mx-6 ">portfolio</span>!!
+          <span className="text-(--color-accent)  mx-6 ">portfolio</span>!!!
         </h1>
         <h2 className="flex justify-center ">
-          Développeur
+          Developpeur
           <div className="text-(--color-accent) ml-6">Full Stack</div>
         </h2>
       </div>
@@ -53,13 +53,13 @@ export default function Presentation() {
         px-3 py-4 rounded overflow-hidden group
         bg-gray-100/60 dark:bg-transparent border
         dark:border-transparent
-        ${activeIndex === index ? "opacity-50" : "opacity-30"}
+        ${activeIndex === index ? "opacity-90" : "opacity-30"}
       `}
           >
             <span className="z-10 font-tech-700">
               <a href={items.url}>{items.name}</a>
             </span>
-            <span className="absolute text-[80px] opacity-50 group-hover:opacity-80 dark:opacity-10 dark:group-hover:opacity-30 transition-all duration-300">
+            <span className="absolute text-[80px] opacity-50 group-hover:opacity-70 dark:opacity-50 dark:group-hover:opacity-50 transition-all duration-300">
               {items.icon}
             </span>
           </div>
