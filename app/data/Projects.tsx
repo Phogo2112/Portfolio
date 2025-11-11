@@ -31,7 +31,7 @@ export const ProjectsData: Project[] = [
       "/cleanertombe/photo-présentation-cleanertombe.PNG",
       "/cleanertombe/tarif-cleanertombe.PNG",
     ],
-    githubUrl: "https://github.com/Phogo2112/cleanertombe.git",
+    githubUrl: "https://github.com/Phogo2112/CleanerTombe.git",
     demoUrl: "https://www.cleanertombe.fr",
     tags: ["Django", "HTML", "OVH", "CSS"],
   },

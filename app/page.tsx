@@ -14,7 +14,7 @@ export default function Home() {
   const cleanerTombeImages = getProjectImages("cleanertombe");
   return (
 
-    <div className="container mx-auto  ">
+    <div className="container mx-auto ">
       <div>
         <div className="min-h-screen">
           <NavBar />
