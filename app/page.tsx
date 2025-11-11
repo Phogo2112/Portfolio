@@ -12,7 +12,7 @@ export default function Home() {
   const cleanerTombeImages = getProjectImages("cleanertombe");
   return (
     <>
-      <div className="container-custom">
+      <div className="container mx-auto  ">
         <div className="min-h-screen">
           <NavBar />
           <section id="about">
@@ -20,7 +20,7 @@ export default function Home() {
           </section>
         </div>
         <section id="projects">
-          <div className="min-h-screen">
+          <div className="min-h-screen ">
             <ProjectCard
               title="Adaction"
               description="Un projet liant le back, le front et la base de données PostgreSQL."

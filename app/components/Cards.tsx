@@ -52,13 +52,13 @@ export default function ProjectCard({
   return (
     <div className="card">
       {/* titre dynamique */}
-      <h3 className="text-4xl font-bold mb-2 flex justify-center">{title}</h3>
+      <h3 className=" sm:text-xl text-4xl font-bold mb-2 flex justify-center">{title}</h3>
       <p className="text-white mb-4">{description}</p>
 
       {/* images dynamiques */}
       <div >{/* modifier le contenue pour déplié et replié les photo du projets. */}
 
-        <div className="flex flex-row justify-center gap-4">
+        <div className="flex  flex-row justify-center gap-4">
           {images?.map((src) => (
             <img
               key={src}
