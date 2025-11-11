@@ -62,6 +62,7 @@ export default function ProjectCard({
   return (
     <div className="py-4">
       <div className="card">
+        {/* déplié - replié */}
         <button
           onClick={() => setShowImages(!showImages)}
           className="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full transition"
@@ -80,7 +81,7 @@ export default function ProjectCard({
           <div className="mt-4">
             {images.length > 0 ? (
               <>
-                {/* 📱 Mobile : une image à la fois + flèches */}
+                {/* Mobile et tablette : une image à la fois + flèches */}
                 <div className="relative flex justify-center items-center w-full lg:hidden">
                   <img
                     key={images[currentImage]}
@@ -89,7 +90,7 @@ export default function ProjectCard({
                     className="w-[250px] h-[400px] object-cover rounded-md transition-all duration-500"
                   />
 
-                  {/* Flèche gauche (mobile only) */}
+                  {/* Flèche gauche (mobile et tablette) */}
                   <button
                     onClick={prevImage}
                     className="absolute left-2 bg-gray-800/50 hover:bg-gray-800 text-white p-2 rounded-full transition"
@@ -97,7 +98,7 @@ export default function ProjectCard({
                     ←
                   </button>
 
-                  {/* Flèche droite (mobile only) */}
+                  {/* Flèche droite (mobile et tablette) */}
                   <button
                     onClick={nextImage}
                     className="absolute right-2 bg-gray-800/50 hover:bg-gray-800 text-white p-2 rounded-full transition"
@@ -106,7 +107,6 @@ export default function ProjectCard({
                   </button>
                 </div>
 
-                {/* 💻 Desktop : toutes les images côte à côte */}
                 <div className="hidden lg:flex justify-center gap-4">
                   {images.map((src) => (
                     <img
@@ -125,6 +125,30 @@ export default function ProjectCard({
             )}
           </div>
         )}
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          {githubUrl && githubUrl.trim() !== "" && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition"
+            >
+              <FaGithub size={18} />
+              Voir sur GitHub
+            </a>
+          )}
+          {/* bouton Github */}
+          {demoUrl && demoUrl.trim() !== "" && (
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-[var(--color-accent)] text-white px-4 py-2 rounded-md hover:opacity-80 transition"
+            >
+              🌐 Visiter le site
+            </a>
+          )}
+        </div>
         {/* tags */}
         <div className="flex gap-2 mt-7 flex-wrap justify-center">
           {tags.map((tag, index) => (
@@ -138,16 +162,5 @@ export default function ProjectCard({
 
     </div>
 
-  );
-}
-
-export function CleanerTombeCard() {
-  return (
-    <ProjectCard
-      title="Cleaner Tombe"
-      description="Application de démonstration pour présenter un projet spécifique."
-      images={[]}
-      tags={[]}
-    />
   );
 }

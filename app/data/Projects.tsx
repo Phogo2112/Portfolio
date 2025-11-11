@@ -9,7 +9,7 @@ export type Project = {
   tags: string[];
 };
 
-export const ProjectsData = [
+export const ProjectsData: Project[] = [
   {
     id: "adaction",
     title: "Adaction",
@@ -20,25 +20,29 @@ export const ProjectsData = [
       "/adaction/page-wastes-type-adaction.PNG",
     ],
     githubUrl: "https://github.com/Phogo2112/adaction-API.git",
-
-    tags: ["Next.js", "Django", "Tailwind", "PostgreSQL"]
+    tags: ["Next.js", "Django", "Tailwind", "PostgreSQL", "ORM"],
   },
   {
     id: "cleanertombe",
     title: "Cleaner Tombe",
     description: "Site Django Templates déployé sur OVH.",
-    images: ["/cleanertombe/blog-cleanertombe.PNG", "/cleanertombe/photo-présentation-cleanertombe.PNG", "/cleanertombe/tarif-cleanertombe.PNG"],
+    images: [
+      "/cleanertombe/blog-cleanertombe.PNG",
+      "/cleanertombe/photo-présentation-cleanertombe.PNG",
+      "/cleanertombe/tarif-cleanertombe.PNG",
+    ],
     githubUrl: "https://github.com/Phogo2112/cleanertombe.git",
-
-    tags: ["Django", "HTML", "OVH"]
+    demoUrl: "https://www.cleanertombe.fr",
+    tags: ["Django", "HTML", "OVH", "CSS"],
   },
   {
     id: "QRcode",
     title: "Script QRcode",
-    description: "Scripts de création de QRcode simple et fonctionnelle grace a une librairie python et un petit scripts.",
-    images: ["/QRcode/Scripts.PNG", "create-QRcode.PNG",],
-    // ajouts de l'url du repos github.
-    tags: ["python"],
+    description:
+      "Script de création de QRcode simple et fonctionnel grâce à une librairie Python.",
+    images: ["/QRcode/Scripts.PNG", "/QRcode/create-QRcode.PNG"],
+    githubUrl: "https://github.com/Phogo2112/Generateur-QRcode",
+    tags: ["Python"],
   },
 ];
 export function getProjectImages(projectId: string): string[] {
