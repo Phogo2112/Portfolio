@@ -32,7 +32,7 @@ export default function Presentation() {
   }, [tech.length]);
   return (
     <div className="">
-      <div className="flex xs:text-sm sm:text-xl justify-center  lg:text-4xl items-center h-[80vh] flex-col text-6xl ">
+      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center items-center h-[80vh] flex-col justify-center ">
         <h1 className=" flex justify-center title ml-6">
           {" "}
           Bienvenue sur mon
