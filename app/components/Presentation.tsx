@@ -14,7 +14,11 @@ import {
   SiJavascript,
 } from "react-icons/si";
 
-export default function Presentation() {
+type PresentationProps = {
+  githubFollowers: number;
+};
+
+export default function Presentation({ githubFollowers }: PresentationProps) {
   const tech = [
     { name: "Python", icon: <FaPython className="text-yellow-400" />, url: 'https://developer.mozilla.org/en-US/docs/Glossary/Python' },
     { name: "Django", icon: <SiDjango className="text-green-500" />, url: 'https://developer.mozilla.org/fr/docs/Learn_web_development/Extensions/Server-side/Django' },
@@ -35,7 +39,7 @@ export default function Presentation() {
   }, [tech.length]);
   return (
     <div className="">
-      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center flex-col justify-center pt-17">
+      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center flex-col justify-center pt-20">
 
         <h2 className="flex justify-center ">
           Developpeur
@@ -137,11 +141,17 @@ export default function Presentation() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="grid grid-cols-2 gap-6 mt-12 pt-8 border-t border-gray-700 mb-10"
+          className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-700 mb-10"
         >
           <div className="text-center">
             <div className="text-3xl font-bold text-[var(--color-accent)]">3+</div>
             <div className="text-sm text-gray-400 mt-1">Projets réalisés</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[var(--color-accent)]">
+              {githubFollowers}
+            </div>
+            <div className="text-sm text-gray-400 mt-1">Followers GitHub</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-[var(--color-accent)]">9</div>

@@ -1,6 +1,6 @@
-"use client";
+
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+
 import ProjectCard from "./components/Cards";
 import NavBar from "./components/NavBar";
 import Presentation from "./components/Presentation";
@@ -8,8 +8,10 @@ import Formation from "./components/Formation";
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
 import { getProjectImages, ProjectsData } from "./data/Projects";
+import { getGithubStats } from "./data/github";
 
-export default function Home() {
+export default async function Home() {
+  const stats = await getGithubStats();
   const adactionImages = getProjectImages("adaction");
   const cleanerTombeImages = getProjectImages("cleanertombe");
   return (
@@ -19,7 +21,8 @@ export default function Home() {
           <NavBar />
           {/* SECTION PRESENTATION */}
           <section id="about">
-            <Presentation />
+            <Presentation githubFollowers={stats?.followers || 0} />
+            <Formation />
           </section>
         </div>
         {/* 🚀 SECTION PROJETS  */}
@@ -34,35 +37,23 @@ export default function Home() {
               ═══════════════════════════════════════════ */}
           <div className="columns-1 lg:columns-2 gap-6 lg:gap-8 max-w-7xl mx-auto">
             {ProjectsData.map((project, index) => (
-              <motion.div
+              <ProjectCard
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="break-inside-avoid mb-6 lg:mb-8"
-              >
-
-                <div
-                  key={project.id}
-                  className="break-inside-avoid mb-6 lg:mb-8"
-                >
-                  <ProjectCard
-                    title={project.title}
-                    description={project.description}
-                    images={project.images}
-                    githubUrl={project.githubUrl}
-                    demoUrl={project.demoUrl}
-                    tags={project.tags}
-                  />
-                </div>
-              </motion.div>
+                index={index}  // ← Passe l'index pour le délai
+                title={project.title}
+                description={project.description}
+                images={project.images}
+                githubUrl={project.githubUrl}
+                demoUrl={project.demoUrl}
+                tags={project.tags}
+              />
             ))}
           </div>
+
         </section>
         {/* SECTION DIPLOME ET FORMATION */}
       </div>
-      <Formation />
+
       {/* SECTION CONTACT RESEAUX */}
       <section id="contact">
         <ContactForm />

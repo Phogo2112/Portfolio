@@ -1,5 +1,6 @@
 'use client'
 import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 import { ReactNode, useState } from "react";
 import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -10,6 +11,7 @@ type ProjectCardProps = {
   githubUrl?: string;
   demoUrl?: string;
   tags: string[];
+  index?: number;
 };
 
 function getTagColor(tag: string): string {
@@ -50,6 +52,7 @@ export default function ProjectCard({
   githubUrl,
   demoUrl,
   tags,
+  index = 0,
 }: ProjectCardProps) {
   const [currentImage, setCurrentImage] = useState(0);
   const [showImages, setShowImages] = useState(false);
@@ -64,12 +67,19 @@ export default function ProjectCard({
   return (
 
     <div className="w-full">
-      <div className="card min-h-[250px] flex flex-col relative bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="w-full break-inside-avoid mb-6 lg:mb-8"
+      >
+        <div className="card min-h-[250px] flex flex-col relative bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm">
 
-        {/* Bouton toggle avec rotation */}
-        <button
-          onClick={() => setShowImages(!showImages)}
-          className={`
+          {/* Bouton toggle avec rotation */}
+          <button
+            onClick={() => setShowImages(!showImages)}
+            className={`
         absolute top-3 right-3 
         bg-gray-700 hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 
         text-white p-2 rounded-full 
@@ -78,131 +88,132 @@ export default function ProjectCard({
         ${showImages ? 'rotate-180' : 'rotate-0'}
         z-10
       `}
-          title={showImages ? "Replier les images" : "Déplier les images"}
-        >
-          <ChevronDown size={18} />
-        </button>
+            title={showImages ? "Replier les images" : "Déplier les images"}
+          >
+            <ChevronDown size={18} />
+          </button>
 
-        {/* Titre */}
-        <h3 className="text-1xl sm:text-1xl lg:text-2xl font-bold mb-3 text-center text-gray-900 dark:text-white">
-          {title}
-        </h3>
+          {/* Titre */}
+          <h3 className="text-1xl sm:text-1xl lg:text-2xl font-bold mb-3 text-center text-gray-900 dark:text-white">
+            {title}
+          </h3>
 
-        {/* Description */}
-        <p className="text-gray-700 text-base mb:text-[12px] dark:text-gray-300 mb-4 text-justify flex-grow">
-          {description}
-        </p>
+          {/* Description */}
+          <p className="text-gray-700 text-base mb:text-[12px] dark:text-gray-300 mb-4 text-justify flex-grow">
+            {description}
+          </p>
 
-        {/* ═══════════════════════════════════════════
+          {/* ═══════════════════════════════════════════
         SECTION IMAGES AVEC TRANSITION FLUIDE TAILWIND
         ═══════════════════════════════════════════ */}
-        <div
-          className={`
+          <div
+            className={`
         overflow-hidden
         transition-all duration-700 ease-in-out
         ${showImages
-              ? 'max-h-[800px] opacity-100 mt-4 mb-4'
-              : 'max-h-0 opacity-0 mt-0 mb-0'
-            }
+                ? 'max-h-[800px] opacity-100 mt-4 mb-4'
+                : 'max-h-0 opacity-0 mt-0 mb-0'
+              }
       `}
-        >
-          {images.length > 0 && (
-            <div className="flex items-center justify-center gap-3 sm:gap-4">
+          >
+            {images.length > 0 && (
+              <div className="flex items-center justify-center gap-3 sm:gap-4">
 
-              {/* Flèche gauche */}
-              {hasMultipleImages && (
-                <button
-                  onClick={prevImage}
-                  className="flex-shrink-0 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
-                  aria-label="Image précédente"
-                >
-                  <ChevronLeft size={20} className="sm:w-6 sm:h-6" strokeWidth={2.5} />
-                </button>
-              )}
-
-              {/* Image avec transition de changement */}
-              <img
-                key={images[currentImage]}
-                src={images[currentImage]}
-                alt={`Aperçu ${currentImage + 1} de ${title}`}
-                className="w-full max-w-sm sm:max-w-md h-[300px] sm:h-[400px] object-cover rounded-lg shadow-lg transition-opacity duration-500"
-              />
-
-              {/* Flèche droite */}
-              {hasMultipleImages && (
-                <button
-                  onClick={nextImage}
-                  className="flex-shrink-0 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
-                  aria-label="Image suivante"
-                >
-                  <ChevronRight size={20} className="sm:w-6 sm:h-6" strokeWidth={2.5} />
-                </button>
-              )}
-            </div>
-          )}
-
-          {/* Indicateurs */}
-          {hasMultipleImages && (
-            <>
-              <div className="flex justify-center gap-2 mt-4">
-                {images.map((_, index) => (
+                {/* Flèche gauche */}
+                {hasMultipleImages && (
                   <button
-                    key={index}
-                    onClick={() => setCurrentImage(index)}
-                    className={`rounded-full transition-all duration-300 ${index === currentImage
-                      ? "bg-[var(--color-accent)] w-8 h-2"
-                      : "bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 w-2 h-2"
-                      }`}
-                    aria-label={`Aller à l'image ${index + 1}`}
-                  />
-                ))}
+                    onClick={prevImage}
+                    className="flex-shrink-0 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+                    aria-label="Image précédente"
+                  >
+                    <ChevronLeft size={20} className="sm:w-6 sm:h-6" strokeWidth={2.5} />
+                  </button>
+                )}
+
+                {/* Image avec transition de changement */}
+                <img
+                  key={images[currentImage]}
+                  src={images[currentImage]}
+                  alt={`Aperçu ${currentImage + 1} de ${title}`}
+                  className="w-full max-w-sm sm:max-w-md h-[300px] sm:h-[400px] object-cover rounded-lg shadow-lg transition-opacity duration-500"
+                />
+
+                {/* Flèche droite */}
+                {hasMultipleImages && (
+                  <button
+                    onClick={nextImage}
+                    className="flex-shrink-0 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+                    aria-label="Image suivante"
+                  >
+                    <ChevronRight size={20} className="sm:w-6 sm:h-6" strokeWidth={2.5} />
+                  </button>
+                )}
               </div>
+            )}
 
-              <div className="text-center mt-2 text-sm text-gray-500 dark:text-gray-400">
-                {currentImage + 1} / {images.length}
-              </div>
-            </>
-          )}
-        </div>
+            {/* Indicateurs */}
+            {hasMultipleImages && (
+              <>
+                <div className="flex justify-center gap-2 mt-4">
+                  {images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImage(index)}
+                      className={`rounded-full transition-all duration-300 ${index === currentImage
+                        ? "bg-[var(--color-accent)] w-8 h-2"
+                        : "bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 w-2 h-2"
+                        }`}
+                      aria-label={`Aller à l'image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <div className="text-center mt-2 text-sm text-gray-500 dark:text-gray-400">
+                  {currentImage + 1} / {images.length}
+                </div>
+              </>
+            )}
+          </div>
 
 
-        <div className="mt-auto flex flex-wrap justify-center gap-3">
-          {githubUrl && githubUrl.trim() !== "" && (
+          <div className="mt-auto flex flex-wrap justify-center gap-3">
+            {githubUrl && githubUrl.trim() !== "" && (
 
-            <a href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gray-800 dark:bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-700 dark:hover:bg-gray-600 transition-all hover:scale-105"
-            >
-              <FaGithub size={18} />
-              Repos GitHub
-            </a>
-          )}
+              <a href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-gray-800 dark:bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-700 dark:hover:bg-gray-600 transition-all hover:scale-105"
+              >
+                <FaGithub size={18} />
+                Repos GitHub
+              </a>
+            )}
 
-          {demoUrl && demoUrl.trim() !== "" && (
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[var(--color-accent)] text-white px-4 py-2 rounded-md hover:opacity-80 transition-all hover:scale-105"
-            >
-              🌐 Démo
-            </a>
-          )}
-        </div>
+            {demoUrl && demoUrl.trim() !== "" && (
+              <a
+                href={demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-[var(--color-accent)] text-white px-4 py-2 rounded-md hover:opacity-80 transition-all hover:scale-105"
+              >
+                🌐 Démo
+              </a>
+            )}
+          </div>
 
-        {/* ═══════════════════════════════════════════
+          {/* ═══════════════════════════════════════════
             TAGS
             ═══════════════════════════════════════════ */}
-        <div className="flex gap-2 mt-6 flex-wrap justify-center">
-          {tags.map((tag) => (
-            <span key={tag} className={`tag ${getTagColor(tag)}`}>
-              {tag}
-            </span>
-          ))}
-        </div>
+          <div className="flex gap-2 mt-6 flex-wrap justify-center">
+            {tags.map((tag) => (
+              <span key={tag} className={`tag ${getTagColor(tag)}`}>
+                {tag}
+              </span>
+            ))}
+          </div>
 
-      </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
