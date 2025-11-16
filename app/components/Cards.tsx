@@ -1,37 +1,45 @@
 'use client'
 import { FaGithub } from "react-icons/fa";
-import { useState } from "react";
-
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ReactNode, useState } from "react";
+import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from "lucide-react";
 
 type ProjectCardProps = {
   title: string;
-  description: string;
+  description: ReactNode;
   images: string[];
   githubUrl?: string;
   demoUrl?: string;
   tags: string[];
 };
+
 function getTagColor(tag: string): string {
   switch (tag.toLowerCase()) {
     case "next.js":
-      return "bg-black text-white";
+      return "bg-black dark:bg-gray-800 text-white";
     case "django":
-      return "bg-green-700 text-white";
+      return "bg-green-700 dark:bg-green-600 text-white";
     case "tailwind":
     case "tailwindcss":
-      return "bg-blue-400 text-white";
+      return "bg-blue-400 dark:bg-blue-500 text-white";
     case "postgresql":
-      return "bg-blue-800 text-white";
+      return "bg-blue-800 dark:bg-blue-700 text-white";
     case "html":
-      return "bg-orange-500 text-white";
+      return "bg-orange-500 dark:bg-orange-600 text-white";
     case "css":
-      return "bg-blue-500 text-white";
+      return "bg-blue-500 dark:bg-blue-600 text-white";
     case "orm":
     case "rest framework":
-      return "bg-purple-600 text-white";
+      return "bg-purple-600 dark:bg-purple-700 text-white";
+    case "python":
+      return "bg-yellow-500 dark:bg-yellow-600 text-white";
+    case "gunicorn":
+      return "bg-[#3776AB] text-white";
+    case "nginx":
+      return "bg-blue-800 text-white";
     default:
-      return "bg-gray-600 text-white";
+      return "bg-gray-600 dark:bg-gray-700 text-white";
+
+
   }
 }
 
@@ -50,117 +58,151 @@ export default function ProjectCard({
     setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   const nextImage = () =>
     setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  function BtnGit({ url }: { url: string }) {
-    return (
-      <a href={url} className="btn" target="_blank" rel="noopener noreferrer">
-        <FaGithub />
-        Voir sur Github
-      </a>
-    );
-  }
 
+  // Détermine si on a plusieurs images
+  const hasMultipleImages = images.length > 1;
   return (
-    <div className="py-4">
-      <div className="card ligth:bg-grey-400">
-        {/* déplié - replié */}
+
+    <div className="w-full">
+      <div className="card min-h-[250px] flex flex-col relative bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm">
+
+        {/* Bouton toggle avec rotation */}
         <button
           onClick={() => setShowImages(!showImages)}
-          className="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white p-2 rounded-full transition"
+          className={`
+        absolute top-3 right-3 
+        bg-gray-700 hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-500 
+        text-white p-2 rounded-full 
+        transition-all duration-300
+        hover:scale-110
+        ${showImages ? 'rotate-180' : 'rotate-0'}
+        z-10
+      `}
           title={showImages ? "Replier les images" : "Déplier les images"}
         >
-          {showImages ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+          <ChevronDown size={18} />
         </button>
+
         {/* Titre */}
-        <h3 className="sm:text-xl text-4xl font-bold mb-2 flex justify-center">
+        <h3 className="text-1xl sm:text-1xl lg:text-2xl font-bold mb-3 text-center text-gray-900 dark:text-white">
           {title}
         </h3>
-        <p className="text-white mb-4 text-center">{description}</p>
 
-        {/* Section images */}
-        {showImages && (
-          <div className="mt-4">
-            {images.length > 0 ? (
-              <>
-                {/* Mobile et tablette : une image à la fois + flèches */}
-                <div className="relative flex justify-center items-center w-full lg:hidden">
-                  <img
-                    key={images[currentImage]}
-                    src={images[currentImage]}
-                    alt={`image ${currentImage + 1} du projet ${title}`}
-                    className="w-[250px] h-[400px] object-cover rounded-md transition-all duration-500"
+        {/* Description */}
+        <p className="text-gray-700 text-base mb:text-[12px] dark:text-gray-300 mb-4 text-justify flex-grow">
+          {description}
+        </p>
+
+        {/* ═══════════════════════════════════════════
+        SECTION IMAGES AVEC TRANSITION FLUIDE TAILWIND
+        ═══════════════════════════════════════════ */}
+        <div
+          className={`
+        overflow-hidden
+        transition-all duration-700 ease-in-out
+        ${showImages
+              ? 'max-h-[800px] opacity-100 mt-4 mb-4'
+              : 'max-h-0 opacity-0 mt-0 mb-0'
+            }
+      `}
+        >
+          {images.length > 0 && (
+            <div className="flex items-center justify-center gap-3 sm:gap-4">
+
+              {/* Flèche gauche */}
+              {hasMultipleImages && (
+                <button
+                  onClick={prevImage}
+                  className="flex-shrink-0 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+                  aria-label="Image précédente"
+                >
+                  <ChevronLeft size={20} className="sm:w-6 sm:h-6" strokeWidth={2.5} />
+                </button>
+              )}
+
+              {/* Image avec transition de changement */}
+              <img
+                key={images[currentImage]}
+                src={images[currentImage]}
+                alt={`Aperçu ${currentImage + 1} de ${title}`}
+                className="w-full max-w-sm sm:max-w-md h-[300px] sm:h-[400px] object-cover rounded-lg shadow-lg transition-opacity duration-500"
+              />
+
+              {/* Flèche droite */}
+              {hasMultipleImages && (
+                <button
+                  onClick={nextImage}
+                  className="flex-shrink-0 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-800 dark:text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 active:scale-95"
+                  aria-label="Image suivante"
+                >
+                  <ChevronRight size={20} className="sm:w-6 sm:h-6" strokeWidth={2.5} />
+                </button>
+              )}
+            </div>
+          )}
+
+          {/* Indicateurs */}
+          {hasMultipleImages && (
+            <>
+              <div className="flex justify-center gap-2 mt-4">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImage(index)}
+                    className={`rounded-full transition-all duration-300 ${index === currentImage
+                      ? "bg-[var(--color-accent)] w-8 h-2"
+                      : "bg-gray-400 dark:bg-gray-600 hover:bg-gray-500 w-2 h-2"
+                      }`}
+                    aria-label={`Aller à l'image ${index + 1}`}
                   />
-
-                  {/* Flèche gauche (mobile et tablette) */}
-                  <button
-                    onClick={prevImage}
-                    className="absolute left-2 bg-gray-800/50 hover:bg-gray-800 text-white p-2 rounded-full transition"
-                  >
-                    ←
-                  </button>
-
-                  {/* Flèche droite (mobile et tablette) */}
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-2 bg-gray-800/50 hover:bg-gray-800 text-white p-2 rounded-full transition"
-                  >
-                    →
-                  </button>
-                </div>
-
-                <div className="hidden lg:flex justify-center gap-4">
-                  {images.map((src) => (
-                    <img
-                      key={src}
-                      src={src}
-                      alt={`image du projet ${title}`}
-                      className="w-[250px] h-[400px] object-cover rounded-md"
-                    />
-                  ))}
-                </div>
-              </>
-            ) : (
-              <div className="text-gray-400 text-center">
-                Aucune image disponible
+                ))}
               </div>
-            )}
-          </div>
-        )}
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
+
+              <div className="text-center mt-2 text-sm text-gray-500 dark:text-gray-400">
+                {currentImage + 1} / {images.length}
+              </div>
+            </>
+          )}
+        </div>
+
+
+        <div className="mt-auto flex flex-wrap justify-center gap-3">
           {githubUrl && githubUrl.trim() !== "" && (
-            <a
-              href={githubUrl}
+
+            <a href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition"
+              className="flex items-center gap-2 bg-gray-800 dark:bg-gray-700 text-white px-4 py-2 rounded-md hover:bg-gray-700 dark:hover:bg-gray-600 transition-all hover:scale-105"
             >
               <FaGithub size={18} />
-              Voir sur GitHub
+              Repos GitHub
             </a>
           )}
-          {/* bouton Github */}
+
           {demoUrl && demoUrl.trim() !== "" && (
             <a
               href={demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[var(--color-accent)] text-white px-4 py-2 rounded-md hover:opacity-80 transition"
+              className="flex items-center gap-2 bg-[var(--color-accent)] text-white px-4 py-2 rounded-md hover:opacity-80 transition-all hover:scale-105"
             >
-              🌐 Visiter le site
+              🌐 Démo
             </a>
           )}
         </div>
-        {/* tags */}
-        <div className="flex gap-2 mt-7 flex-wrap justify-center">
-          {tags.map((tag, index) => (
+
+        {/* ═══════════════════════════════════════════
+            TAGS
+            ═══════════════════════════════════════════ */}
+        <div className="flex gap-2 mt-6 flex-wrap justify-center">
+          {tags.map((tag) => (
             <span key={tag} className={`tag ${getTagColor(tag)}`}>
               {tag}
             </span>
           ))}
         </div>
+
       </div>
-
-
     </div>
-
   );
 }

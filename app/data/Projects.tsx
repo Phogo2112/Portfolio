@@ -1,8 +1,9 @@
+import { ReactNode } from "react";
 
 export type Project = {
   id: string;
   title: string;
-  description: string;
+  description: ReactNode;
   images: string[];
   githubUrl: string;
   demoUrl?: string;
@@ -24,8 +25,48 @@ export const ProjectsData: Project[] = [
   },
   {
     id: "cleanertombe",
-    title: "Cleaner Tombe",
-    description: "Site Django Templates déployé sur OVH.",
+    title: "CleanerTombe (Site vitrine et SEO)",
+    description: (
+      <>
+        <p>
+          L'objectif était de réaliser un site vitrine complet pour un
+          service B2C.Le défi n'était pas seulement technique, mais aussi commercial :
+          assurer une présence en ligne professionnelle et générer de
+          la visibilité locale à partir de zéro.
+        </p>
+        <br />
+        <p>
+          Né d'un besoin concret pour mon entreprise, j'ai développé ce
+          site vitrine de A à Z avec Django après seulement <strong>6 mois
+            de développement en autodidacte</strong>.
+        </p>
+        <br />
+        <h4 className=""><strong>L'objectif de la création de ce projet :</strong></h4>
+        <p>
+          allier une solution technique robuste à une
+          stratégie SEO locale.
+        </p>
+      </>
+    ),
+    // details_techniques: (
+    //   <>
+    //     <p>
+    //       La stack est basée sur <strong>Python/Django</strong> (utilisant Django Templates) 
+    //       pour sa fiabilité et sa sécurité.
+    //     </p>
+    //     <p>
+    //       Le point fort de ce projet est son <strong>déploiement sur un VPS</strong> 
+    //       dédié. J'ai configuré l'intégralité du serveur, incluant 
+    //       <strong> NGINX</strong> comme reverse proxy et <strong>Gunicorn</strong> comme 
+    //       serveur d'application WSGI, tout en gérant le nom de domaine et le SSL.
+    //     </p>
+    //     <p>
+    //       Le développement a été couplé à une optimisation SEO poussée et à la 
+    //       création d'un profil Google Business pour répondre au besoin 
+    //       commercial de visibilité.
+    //     </p>
+    //   </>
+    // ),
     images: [
       "/cleanertombe/blog-cleanertombe.PNG",
       "/cleanertombe/photo-présentation-cleanertombe.PNG",
@@ -33,14 +74,14 @@ export const ProjectsData: Project[] = [
     ],
     githubUrl: "https://github.com/Phogo2112/CleanerTombe.git",
     demoUrl: "https://www.cleanertombe.fr",
-    tags: ["Django", "HTML", "OVH", "CSS"],
+    tags: ["Django", "HTML", "OVH", "CSS", "Nginx", "Gunicorn"],
   },
   {
     id: "QRcode",
     title: "Script QRcode",
     description:
       "Script de création de QRcode simple et fonctionnel grâce à une librairie Python.",
-    images: ["/QRcode/Scripts.PNG", "/QRcode/create-QRcode.PNG"],
+    images: ["/QRcode/codeQRcode.PNG"],
     githubUrl: "https://github.com/Phogo2112/Generateur-QRcode",
     tags: ["Python"],
   },
