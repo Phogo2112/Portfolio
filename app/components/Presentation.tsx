@@ -35,12 +35,8 @@ export default function Presentation() {
   }, [tech.length]);
   return (
     <div className="">
-      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center flex-col justify-center pt-25">
-        <h1 className=" flex justify-center title ml-6">
-          {" "}
-          Bienvenue sur mon
-          <span className="text-(--color-accent)  mx-6 ">portfolio</span>!!!
-        </h1>
+      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center flex-col justify-center pt-17">
+
         <h2 className="flex justify-center ">
           Developpeur
           <div className="text-(--color-accent) ml-6">Full Stack</div>
@@ -65,30 +61,36 @@ export default function Presentation() {
             </div>
             <p className="text-lg leading-relaxed flex-1">
               Développeur Full-Stack en reconversion, je construis des applications web
-              modernes et fonctionnelles avec <Highlight variant="accent" >Django</Highlight>/<Highlight variant="accent" > Next.js</Highlight> et <Highlight variant="accent" >PostgresSQL</Highlight>
+              modernes et fonctionnelles avec <Highlight variant="tech" >Django</Highlight>/<Highlight variant="tech" > Next.js</Highlight> et <Highlight variant="tech" >PostgresSQL</Highlight>
             </p>
           </motion.div>
 
-          {/* Bloc 2 : Parcours atypique */}
+
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
             className="flex gap-4 items-start"
           >
-            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-500 rounded-lg flex items-center justify-center">
               <Wrench className="text-white" size={24} />
             </div>
-            <p className="text-lg leading-relaxed flex-1">
-              Mon parcours — <strong>plombier</strong>, et{" "}
-              <strong>électricien</strong> — m'a appris la{" "}
-              <span className="text-[var(--color-accent)] font-semibold">rigueur technique</span>,
-              la lecture de schémas complexes et la résolution méthodique de problèmes.
-              Des compétences que j'applique aujourd'hui au développement logiciel.
-            </p>
+            <div className="flex-1">
+              <h4 className="text-xl font-bold mb-2 text-[var(--color-accent)]">
+                Apprentissage autodidacte
+              </h4>
+              <p className="text-lg leading-relaxed">
+                Initié au code il y a <strong>un an</strong> via des tutoriels YouTube et la formation
+                <Highlight variant="tech"> Beliévemy</Highlight> (SaaS), j'ai rapidement mis en pratique
+                mes connaissances en <Highlight variant="tech">Python</Highlight> et
+                <Highlight variant="tech">Django</Highlight>. En parallèle, j'ai développé des
+                <strong> outils professionnels</strong> : générateur de QR codes et un site web pour mon entreprise. Cette approche
+                <Highlight variant="warning"> learning by doing</Highlight> m'a appris à transformer
+                des besoins métier en solutions fonctionnelles.
+              </p>
+            </div>
           </motion.div>
 
-          {/* Bloc 3 : Formation */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
