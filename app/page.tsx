@@ -1,6 +1,6 @@
 
 import { ReactNode } from "react";
-
+import ProfessionalJourney from "./components/ProfessionalJourney";
 import ProjectCard from "./components/Cards";
 import NavBar from "./components/NavBar";
 import Presentation from "./components/Presentation";
@@ -22,7 +22,7 @@ export default async function Home() {
           {/* SECTION PRESENTATION */}
           <section id="about">
             <Presentation githubFollowers={stats?.followers || 0} />
-            <Formation />
+
           </section>
         </div>
         {/* 🚀 SECTION PROJETS  */}
@@ -52,6 +52,7 @@ export default async function Home() {
 
         </section>
         {/* SECTION DIPLOME ET FORMATION */}
+        <ProfessionalJourney />
       </div>
 
       {/* SECTION CONTACT RESEAUX */}
