@@ -39,7 +39,7 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
   }, [tech.length]);
   return (
     <div className="">
-      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center flex-col justify-center pt-20">
+      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center flex-col justify-center pt-22">
 
         <h2 className="flex justify-center ">
           Developpeur
@@ -50,7 +50,7 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-4xl mx-auto mt-16 px-6"
+        className="max-w-4xl mx-auto mt-10 px-6"
       >
         <div className="space-y-8">
           {/* Bloc 1 : Accroche technique */}
@@ -87,9 +87,9 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
                 Initié au code il y a <strong>un an</strong> via des tutoriels YouTube et la formation
                 <Highlight variant="tech"> Beliévemy</Highlight> (SaaS), j'ai rapidement mis en pratique
                 mes connaissances en <Highlight variant="tech">Python</Highlight> et
-                <Highlight variant="tech">Django</Highlight>. En parallèle, j'ai développé des
-                <strong> outils professionnels</strong> : générateur de QR codes et un site web pour mon entreprise. Cette approche
-                <Highlight variant="warning"> learning by doing</Highlight> m'a appris à transformer
+                <Highlight variant="tech"> Django</Highlight>. En parallèle, j'ai développé des
+                <strong> outils professionnels</strong> : générateur de QR codes et un site web pour mon entreprise... Cette approche
+                <Highlight variant="warning"> learning by doing !</Highlight> M'a appris à transformer
                 des besoins métier en solutions fonctionnelles.
               </p>
             </div>
