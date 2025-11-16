@@ -12,7 +12,7 @@ export default function Footer() {
           </a>
         </li>
       </ul>
-      <p className="text-center py-6">© 2024 Mon Portfolio - Tous droits réservés.</p>
+      <p className="text-center py-6">© 2025 Mon Portfolio - Tous droits réservés.</p>
     </footer>
   );
 }
