@@ -45,7 +45,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
           <SpeedInsightClient />
         </ThemeProvider>
-
       </body>
     </html>
   );

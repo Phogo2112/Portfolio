@@ -19,7 +19,6 @@ export default function ThemeToggle() {
     );
   }
 
-
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (

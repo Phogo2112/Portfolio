@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import ProjectCard from "./components/Cards";
 import NavBar from "./components/NavBar";
 import Presentation from "./components/Presentation";
@@ -8,12 +8,10 @@ import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
 import { getProjectImages, ProjectsData } from "./data/Projects";
 
-
 export default function Home() {
   const adactionImages = getProjectImages("adaction");
   const cleanerTombeImages = getProjectImages("cleanertombe");
   return (
-
     <div className="container mx-auto ">
       <div>
         <div className="min-h-screen">
@@ -21,7 +19,6 @@ export default function Home() {
           {/* SECTION PRESENTATION */}
           <section id="about">
             <Presentation />
-
           </section>
         </div>
         {/* 🚀 SECTION PROJETS */}

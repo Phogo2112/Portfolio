@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FaPython, FaReact } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Code2, Wrench, GraduationCap, Briefcase } from "lucide-react";
+import { Highlight } from "./ui/Highlight";
 import {
   SiDjango,
   SiNextdotjs,
@@ -64,10 +65,7 @@ export default function Presentation() {
             </div>
             <p className="text-lg leading-relaxed flex-1">
               Développeur Full-Stack en reconversion, je construis des applications web
-              modernes et fonctionnelles avec{" "}
-              <span className="font-semibold text-[var(--color-accent)]">Django</span>,{" "}
-              <span className="font-semibold text-[var(--color-accent)]">React</span> et{" "}
-              <span className="font-semibold text-[var(--color-accent)]">Next.js</span>.
+              modernes et fonctionnelles avec <Highlight variant="accent" >Django</Highlight>/<Highlight variant="accent" > Next.js</Highlight> et <Highlight variant="accent" >PostgresSQL</Highlight>
             </p>
           </motion.div>
 
@@ -82,7 +80,7 @@ export default function Presentation() {
               <Wrench className="text-white" size={24} />
             </div>
             <p className="text-lg leading-relaxed flex-1">
-              Mon parcours atypique — <strong>plombier</strong>, et{" "}
+              Mon parcours — <strong>plombier</strong>, et{" "}
               <strong>électricien</strong> — m'a appris la{" "}
               <span className="text-[var(--color-accent)] font-semibold">rigueur technique</span>,
               la lecture de schémas complexes et la résolution méthodique de problèmes.
@@ -172,7 +170,6 @@ export default function Presentation() {
           </div>
         ))}
       </div>
-
     </div >
   );
 }
