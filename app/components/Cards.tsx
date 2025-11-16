@@ -61,7 +61,7 @@ export default function ProjectCard({
 
   return (
     <div className="py-4">
-      <div className="card">
+      <div className="card ligth:bg-grey-400">
         {/* déplié - replié */}
         <button
           onClick={() => setShowImages(!showImages)}

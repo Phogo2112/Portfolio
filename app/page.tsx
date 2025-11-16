@@ -18,8 +18,10 @@ export default function Home() {
       <div>
         <div className="min-h-screen">
           <NavBar />
+          {/* SECTION PRESENTATION */}
           <section id="about">
             <Presentation />
+
           </section>
         </div>
         {/* 🚀 SECTION PROJETS */}
@@ -36,8 +38,10 @@ export default function Home() {
             />
           ))}
         </section>
+        {/* SECTION DIPLOME ET FORMATION */}
       </div>
       <Formation />
+      {/* SECTION CONTACT RESEAUX */}
       <section id="contact">
         <ContactForm />
         <Footer />

@@ -1,6 +1,8 @@
 'use client';
 import { useEffect, useState } from "react";
 import { FaPython, FaReact } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { Code2, Wrench, GraduationCap, Briefcase } from "lucide-react";
 import {
   SiDjango,
   SiNextdotjs,
@@ -32,7 +34,7 @@ export default function Presentation() {
   }, [tech.length]);
   return (
     <div className="">
-      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center items-center h-[80vh] flex-col justify-center ">
+      <div className="flex text-2xl sm:text-3xl md:text-4xl font-bold mb-2 text-center flex-col justify-center pt-25">
         <h1 className=" flex justify-center title ml-6">
           {" "}
           Bienvenue sur mon
@@ -43,6 +45,111 @@ export default function Presentation() {
           <div className="text-(--color-accent) ml-6">Full Stack</div>
         </h2>
       </div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-4xl mx-auto mt-16 px-6"
+      >
+        <div className="space-y-8">
+          {/* Bloc 1 : Accroche technique */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="flex gap-4 items-start"
+          >
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+              <Code2 className="text-white" size={24} />
+            </div>
+            <p className="text-lg leading-relaxed flex-1">
+              Développeur Full-Stack en reconversion, je construis des applications web
+              modernes et fonctionnelles avec{" "}
+              <span className="font-semibold text-[var(--color-accent)]">Django</span>,{" "}
+              <span className="font-semibold text-[var(--color-accent)]">React</span> et{" "}
+              <span className="font-semibold text-[var(--color-accent)]">Next.js</span>.
+            </p>
+          </motion.div>
+
+          {/* Bloc 2 : Parcours atypique */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            className="flex gap-4 items-start"
+          >
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+              <Wrench className="text-white" size={24} />
+            </div>
+            <p className="text-lg leading-relaxed flex-1">
+              Mon parcours atypique — <strong>plombier</strong>, et{" "}
+              <strong>électricien</strong> — m'a appris la{" "}
+              <span className="text-[var(--color-accent)] font-semibold">rigueur technique</span>,
+              la lecture de schémas complexes et la résolution méthodique de problèmes.
+              Des compétences que j'applique aujourd'hui au développement logiciel.
+            </p>
+          </motion.div>
+
+          {/* Bloc 3 : Formation */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+            className="flex gap-4 items-start"
+          >
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+              <GraduationCap className="text-white" size={24} />
+            </div>
+            <p className="text-lg leading-relaxed flex-1">
+              Formé à <strong className="text-[var(--color-accent)]">Ada Tech School Nantes</strong>,
+              je maîtrise le cycle complet de développement : de la conception d'API REST
+              avec Django à la création d'interfaces utilisateur réactives avec Next.js
+              et Tailwind CSS.
+            </p>
+          </motion.div>
+
+          {/* Bloc 4 : Call-to-Action */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex gap-4 items-start"
+          >
+            <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-lg flex items-center justify-center">
+              <Briefcase className="text-white" size={24} />
+            </div>
+            <p className="text-lg leading-relaxed flex-1">
+              Je recherche actuellement une{" "}
+              <span className="inline-block px-3 py-1 bg-[var(--color-accent)]/20 text-[var(--color-accent)] rounded-full font-semibold">
+                alternance (RNCP 6)
+              </span>{" "}
+              ou un{" "}
+              <span className="inline-block px-3 py-1 bg-[var(--color-accent)]/20 text-[var(--color-accent)] rounded-full font-semibold">
+                premier poste
+              </span>{" "}
+              pour mettre mes compétences au service de projets concrets.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Stats visuelles */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="grid grid-cols-2 gap-6 mt-12 pt-8 border-t border-gray-700 mb-10"
+        >
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[var(--color-accent)]">3+</div>
+            <div className="text-sm text-gray-400 mt-1">Projets réalisés</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-[var(--color-accent)]">9</div>
+            <div className="text-sm text-gray-400 mt-1">Technologies maîtrisées</div>
+          </div>
+        </motion.div>
+      </motion.div>
+
       <div className="grid place-items-center gap-6 
                   grid-cols-[repeat(auto-fit,minmax(140px,1fr))]">
         {tech.map((items, index) => (
@@ -65,7 +172,7 @@ export default function Presentation() {
           </div>
         ))}
       </div>
+
     </div >
   );
 }
-// `w-1/2 sm:w-1/3 md:w-1/4 relative flex items-center justify-center sm:text-base lg:text-2xl  font-semibold mx-3 px-3 py-4 rounded overflow-hidden group bg-gray-100 /60 dark:bg-transparent border dark:border-transparent dark:${activeIndex === index ? "opacity-30" : "opacity-10"}`}
