@@ -164,7 +164,7 @@ export default function Presentation() {
             <span className="z-10 font-tech-700">
               <a href={items.url}>{items.name}</a>
             </span>
-            <span className="absolute text-[80px] opacity-50 group-hover:opacity-70 dark:opacity-50 dark:group-hover:opacity-50 transition-all duration-300">
+            <span className="absolute text-[45px] md:text-[60px] sm:text-[50px] lg:text-[80px] opacity-50 group-hover:opacity-70 dark:opacity-50 dark:group-hover:opacity-50 transition-all duration-300">
               {items.icon}
             </span>
           </div>
