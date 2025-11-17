@@ -42,9 +42,7 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
 
   return (
     <div className="px-4 sm:px-6">
-      {/* ═══════════════════════════════════════════
-          TITRE PRINCIPAL - RESPONSIVE
-          ═══════════════════════════════════════════ */}
+      {/* Titre principal */}
       <div className="flex text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-2 text-center flex-col justify-center pt-20 sm:pt-22">
         <h2 className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4">
           <span>Développeur</span>
@@ -52,9 +50,7 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
         </h2>
       </div>
 
-      {/* ═══════════════════════════════════════════
-          BLOCS DE PRÉSENTATION - TOUT LE CONTENU RESTE !
-          ═══════════════════════════════════════════ */}
+      {/* Blocs de présentation */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -159,9 +155,7 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
         >
           {/* Stat 1 : Projets */}
           <div className="flex flex-col items-center gap-2">
-            {/* Icône avec chiffre */}
             <div className="relative group">
-              {/* Shadow coloré */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
 
               {/* Icône */}
@@ -170,8 +164,6 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
                 <span className="text-2xl sm:text-3xl font-bold text-white">3+</span>
               </div>
             </div>
-
-            {/* Description */}
             <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
               Réalisés
             </span>
@@ -179,9 +171,7 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
 
           {/* Stat 2 : Followers GitHub */}
           <div className="flex flex-col items-center gap-2">
-            {/* Icône avec chiffre */}
             <div className="relative group">
-              {/* Shadow coloré */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
 
               {/* Icône */}
@@ -190,8 +180,6 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
                 <span className="text-2xl sm:text-3xl font-bold text-white">{githubFollowers}</span>
               </div>
             </div>
-
-            {/* Description */}
             <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
               Followers
             </span>
@@ -199,9 +187,7 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
 
           {/* Stat 3 : Technologies */}
           <div className="flex flex-col items-center gap-2">
-            {/* Icône avec chiffre */}
             <div className="relative group">
-              {/* Shadow coloré */}
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
 
               {/* Icône */}
@@ -210,8 +196,6 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
                 <span className="text-2xl sm:text-3xl font-bold text-white">9</span>
               </div>
             </div>
-
-            {/* Description */}
             <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
               Technologies
             </span>

@@ -1,4 +1,3 @@
-// app/components/ThemeToggle.tsx
 'use client';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -23,8 +22,6 @@ export default function ThemeToggle() {
   const handleToggle = () => {
     const currentTheme = theme === 'system' ? systemTheme : theme;
     setTheme(currentTheme === 'dark' ? 'light' : 'dark');
-
-    // Enlève le badge après le premier clic
     if (showBadge) {
       setShowBadge(false);
       localStorage.setItem('hasUsedThemeToggle', 'true');
@@ -49,7 +46,7 @@ export default function ThemeToggle() {
             animate={{
               scale: 1,
               rotate: 0,
-              y: [0, -3, 0] // Animation de rebond
+              y: [0, -3, 0]
             }}
             exit={{ scale: 0, rotate: 180 }}
             transition={{
@@ -69,7 +66,6 @@ export default function ThemeToggle() {
         )}
       </AnimatePresence>
 
-      {/* Bouton toggle avec effet de pulsation si badge visible */}
       <motion.button
         onClick={handleToggle}
         animate={showBadge ? {

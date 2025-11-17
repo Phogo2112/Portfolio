@@ -2,7 +2,6 @@
 module.exports = {
   darkMode: "class",
 
-  // Fichiers à scanner pour les classes Tailwind
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",

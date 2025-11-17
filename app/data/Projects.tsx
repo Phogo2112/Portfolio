@@ -48,25 +48,7 @@ export const ProjectsData: Project[] = [
         </p>
       </>
     ),
-    // details_techniques: (
-    //   <>
-    //     <p>
-    //       La stack est basée sur <strong>Python/Django</strong> (utilisant Django Templates) 
-    //       pour sa fiabilité et sa sécurité.
-    //     </p>
-    //     <p>
-    //       Le point fort de ce projet est son <strong>déploiement sur un VPS</strong> 
-    //       dédié. J'ai configuré l'intégralité du serveur, incluant 
-    //       <strong> NGINX</strong> comme reverse proxy et <strong>Gunicorn</strong> comme 
-    //       serveur d'application WSGI, tout en gérant le nom de domaine et le SSL.
-    //     </p>
-    //     <p>
-    //       Le développement a été couplé à une optimisation SEO poussée et à la 
-    //       création d'un profil Google Business pour répondre au besoin 
-    //       commercial de visibilité.
-    //     </p>
-    //   </>
-    // ),
+
     images: [
       "/cleanertombe/blog-cleanertombe.PNG",
       "/cleanertombe/photo-présentation-cleanertombe.PNG",

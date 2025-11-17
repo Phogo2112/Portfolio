@@ -9,7 +9,6 @@ export default function NavBar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [screenSize, setScreenSize] = useState<'xs' | 'sm' | 'lg'>('lg');
 
-  // Détecte la taille de l'écran
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
@@ -22,15 +21,12 @@ export default function NavBar() {
       }
     };
 
-    // Initialisation
     handleResize();
 
-    // Écoute les changements de taille
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Gestion du scroll (code existant)
   useEffect(() => {
     const controlNavbar = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 200) {
@@ -64,10 +60,10 @@ export default function NavBar() {
           ${showNavbar ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        {/* Logo/Nom - CONDITIONNEL AVEC REACT */}
+        {/* Logo/Nom */}
         <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl px-3 sm:px-5 font-bold">
 
-          {/* Très petits mobiles (< 475px) */}
+
           {screenSize === 'xs' && (
             <span className="flex flex-col">
               <Highlight>S.</Highlight>
@@ -75,7 +71,7 @@ export default function NavBar() {
             </span>
           )}
 
-          {/* Mobiles standards (475px - 639px) */}
+
           {screenSize === 'sm' && (
             <span className="flex flex-col">
               <Highlight>Sulyvann</Highlight>
@@ -83,7 +79,7 @@ export default function NavBar() {
             </span>
           )}
 
-          {/* Tablette/Desktop (≥ 640px) */}
+
           {screenSize === 'lg' && (
             <span className="flex flex-row items-center gap-3">
               <Highlight>Sulyvann</Highlight>

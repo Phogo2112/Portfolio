@@ -41,7 +41,6 @@ function getTagColor(tag: string): string {
     default:
       return "bg-gray-600 dark:bg-gray-700 text-white";
 
-
   }
 }
 
@@ -62,7 +61,6 @@ export default function ProjectCard({
   const nextImage = () =>
     setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
 
-  // Détermine si on a plusieurs images
   const hasMultipleImages = images.length > 1;
   return (
 
@@ -103,7 +101,7 @@ export default function ProjectCard({
             {description}
           </p>
 
-          {/* SECTION IMAGES AVEC TRANSITION FLUIDE TAILWIND */}
+          {/* Section images */}
           <div
             className={`
         overflow-hidden
@@ -127,8 +125,6 @@ export default function ProjectCard({
                     <ChevronLeft size={20} className="sm:w-6 sm:h-6" strokeWidth={2.5} />
                   </button>
                 )}
-
-                {/* Image avec transition de changement */}
                 <img
                   key={images[currentImage]}
                   src={images[currentImage]}
@@ -148,8 +144,6 @@ export default function ProjectCard({
                 )}
               </div>
             )}
-
-            {/* Indicateurs */}
             {hasMultipleImages && (
               <>
                 <div className="flex justify-center gap-2 mt-4">
@@ -198,10 +192,7 @@ export default function ProjectCard({
               </a>
             )}
           </div>
-
-          {/* ═══════════════════════════════════════════
-            TAGS
-            ═══════════════════════════════════════════ */}
+          {/* Tags */}
           <div className="flex gap-2 mt-6 flex-wrap justify-center">
             {tags.map((tag) => (
               <span key={tag} className={`tag ${getTagColor(tag)}`}>

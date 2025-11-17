@@ -1,4 +1,4 @@
-// app/components/Footer.tsx
+
 "use client";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 export default function Footer() {
   return (
     <footer className="relative">
-      {/* ═══════════════════════════════════════════
-          BOUTONS SOCIAUX - POSITION CORRIGÉE
-          ═══════════════════════════════════════════ */}
+      {/* Boutons sociaux */}
+
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -108,9 +108,9 @@ export default function Footer() {
         </motion.a>
       </motion.div>
 
-      {/* ═══════════════════════════════════════════
-          COPYRIGHT
-          ═══════════════════════════════════════════ */}
+      {/* COPYRIGHT */}
+
+
       <div className="border-t border-gray-200 dark:border-gray-800">
         <p className="text-center py-6 text-sm text-gray-600 dark:text-gray-400">
           © 2025 Sulyvann Dain - Tous droits réservés.

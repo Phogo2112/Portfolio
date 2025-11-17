@@ -1,4 +1,3 @@
-// app/components/ProfessionalJourney.tsx
 'use client'
 
 import { motion } from "framer-motion";
@@ -31,9 +30,8 @@ type Experience = {
 };
 
 const experiences: Experience[] = [
-  // ══════════════════════════════════════
-  // FORMATIONS ACTUELLES (Mise en avant)
-  // ══════════════════════════════════════
+
+  // Formations actuelle
   {
     id: "adaTechSchool",
     title: "Ada Tech School Nantes",
@@ -81,9 +79,8 @@ const experiences: Experience[] = [
     color: "from-purple-500 to-pink-500"
   },
 
-  // ══════════════════════════════════════
-  // EXPÉRIENCES PASSÉES (Compétences transférables)
-  // ══════════════════════════════════════
+
+  // Expériences passée
   {
     id: "electricien",
     title: "Électricien",
@@ -161,7 +158,6 @@ const experiences: Experience[] = [
   },
 ];
 
-// Compétences globales recherchées
 const globalSkills = [
   { name: "Anglais technique", icon: "🌐", level: 70 },
   { name: "Architecture logicielle", icon: "🏗️", level: 75 },
@@ -178,10 +174,6 @@ export default function ProfessionalJourney() {
   return (
     <section className="py-20 px-4 sm:px-6  from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto">
-
-        {/* ═══════════════════════════════════════════
-            HEADER
-            ═══════════════════════════════════════════ */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -196,9 +188,7 @@ export default function ProfessionalJourney() {
           </p>
         </motion.div>
 
-        {/* ═══════════════════════════════════════════
-            FORMATIONS ACTUELLES (Highlight)
-            ═══════════════════════════════════════════ */}
+        {/* Formations actuelle (Highlight)*/}
         <div className="mb-20">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
             <Sparkles className="text-[var(--color-accent)]" />
@@ -286,9 +276,7 @@ export default function ProfessionalJourney() {
           </div>
         </div>
 
-        {/* ═══════════════════════════════════════════
-            PARCOURS ANTÉRIEUR (Timeline compacte)
-            ═══════════════════════════════════════════ */}
+        {/* Parcours antérieurs */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold mb-8">
             Mes diplômes et expérience

@@ -1,10 +1,7 @@
-// app/globals.scss
 
 @use "tailwindcss";
 
-/* ═══════════════════════════════════════════════
-   POLICES LOCALES - BITCOUNT
-   ═══════════════════════════════════════════════ */
+// police locale
 
 @font-face {
   font-family: "Bitcount";
@@ -38,9 +35,6 @@
   font-display: swap;
 }
 
-/* ═══════════════════════════════════════════════
-   VARIABLES CSS - MODE LIGHT (par défaut)
-   ═══════════════════════════════════════════════ */
 :root {
   /* Polices */
   --font-rajdhani: "Rajdhani", sans-serif;
@@ -55,12 +49,10 @@
   --color-accent: #ea580c;
   --color-accent-hover: #c2410c;
 
-  /* Fond et texte - MODE LIGHT */
   --color-bg: #ffffff;
   --color-fg: #171717;
   --color-border: #e5e7eb;
 
-  /* Rayons, espacements */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
@@ -68,9 +60,6 @@
   --space-md: 1rem;
 }
 
-/* ═══════════════════════════════════════════════
-   VARIABLES CSS - MODE DARK
-   ═══════════════════════════════════════════════ */
 .dark {
   --color-bg: #0a0a0a;
   --color-fg: #ededed;
@@ -78,9 +67,6 @@
   --color-accent: #fb923c;
 }
 
-/* ═══════════════════════════════════════════════
-   CLASSES UTILITAIRES
-   ═══════════════════════════════════════════════ */
 .secondary {
   color: var(--color-secondary);
 }
@@ -103,9 +89,6 @@ h2,
   letter-spacing: 1px;
 }
 
-/* ═══════════════════════════════════════════════
-   STYLES DE BASE
-   ═══════════════════════════════════════════════ */
 body {
   background-color: var(--color-bg);
   color: var(--color-fg);
@@ -113,9 +96,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ═══════════════════════════════════════════════
-   COMPOSANTS TAILWIND
-   ═══════════════════════════════════════════════ */
 @layer components {
   .font-tech-700 {
     font-family: var(--font-rajdhani), sans-serif;
