@@ -67,7 +67,7 @@ export default function Footer() {
 
         {/* Bouton LinkedIn */}
         <motion.a
-          href="https://www.linkedin.com/in/ton-profil"
+          href="https://www.linkedin.com/in/sulyvann-dain-68848a289"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
