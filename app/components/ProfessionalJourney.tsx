@@ -303,7 +303,7 @@ export default function ProfessionalJourney() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700"
+                className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700"
               >
                 <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${exp.color} flex items-center justify-center text-white mb-4`}>
                   {exp.icon}
@@ -346,7 +346,7 @@ export default function ProfessionalJourney() {
           viewport={{ once: true }}
           className="bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8"
         >
-          <h3 className="text-2xl font-bold mb-8 text-center">
+          <h3 className="text-2xl text-white font-bold mb-8 text-center">
             Compétences en Cours de Développement
           </h3>
 

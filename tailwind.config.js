@@ -10,6 +10,9 @@ module.exports = {
 
   theme: {
     extend: {
+      screens: {
+        xs: "475px",
+      },
       colors: {
         primary: {
           DEFAULT: "#2563eb",

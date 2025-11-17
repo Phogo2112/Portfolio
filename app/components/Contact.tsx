@@ -15,7 +15,7 @@ export default function ContactForm() {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="w-full max-w-md mx-auto mt-10 p-8 bg-white/10 backdrop-blur-md shadow-lg rounded-2xl border border-white/20 "
+      className="w-full max-w-[90%] mx-auto sm:max-w-md sm:mt-10 mt-6 p-6 sm:p-8 mt-10 p-8 bg-gray-800 backdrop-blur-md shadow-lg rounded-2xl border-2 border-black "
     >
       <h2 className="text-2xl font-bold text-center text-white mb-6">
         Contactez-moi ✉️

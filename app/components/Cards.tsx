@@ -74,7 +74,7 @@ export default function ProjectCard({
         transition={{ duration: 0.5, delay: index * 0.1 }}
         className="w-full break-inside-avoid mb-6 lg:mb-8"
       >
-        <div className="card min-h-[250px] flex flex-col relative bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm">
+        <div className="card min-h-[250px] flex flex-col relative border-2 border-orange-700 bg-gray-800 backdrop-blur-sm">
 
           {/* Bouton toggle avec rotation */}
           <button
@@ -103,9 +103,7 @@ export default function ProjectCard({
             {description}
           </p>
 
-          {/* ═══════════════════════════════════════════
-        SECTION IMAGES AVEC TRANSITION FLUIDE TAILWIND
-        ═══════════════════════════════════════════ */}
+          {/* SECTION IMAGES AVEC TRANSITION FLUIDE TAILWIND */}
           <div
             className={`
         overflow-hidden

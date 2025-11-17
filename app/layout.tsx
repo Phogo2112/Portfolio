@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import type { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
 import { Rajdhani } from "next/font/google";
+
 import "./globals.scss";
 
 // Google Fonts
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           enableSystem={true}
         >
           {children}
+
           <SpeedInsightClient />
         </ThemeProvider>
       </body>

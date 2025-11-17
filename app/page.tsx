@@ -28,7 +28,7 @@ export default async function Home() {
         {/* 🚀 SECTION PROJETS  */}
         <section id="projects" className="py-20 px-4 sm:px-6">
           {/* Titre de section */}
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-12">
             Mes <span className="text-[var(--color-accent)]">Projets</span>
           </h2>
 

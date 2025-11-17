@@ -1,4 +1,5 @@
-"use client";
+// app/components/NavBar.tsx
+'use client';
 import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { Highlight } from "./ui/Highlight";
@@ -6,7 +7,30 @@ import { Highlight } from "./ui/Highlight";
 export default function NavBar() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [screenSize, setScreenSize] = useState<'xs' | 'sm' | 'lg'>('lg');
 
+  // Détecte la taille de l'écran
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 475) {
+        setScreenSize('xs');
+      } else if (width < 640) {
+        setScreenSize('sm');
+      } else {
+        setScreenSize('lg');
+      }
+    };
+
+    // Initialisation
+    handleResize();
+
+    // Écoute les changements de taille
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Gestion du scroll (code existant)
   useEffect(() => {
     const controlNavbar = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 200) {
@@ -40,19 +64,33 @@ export default function NavBar() {
           ${showNavbar ? "translate-y-0" : "-translate-y-full"}
         `}
       >
-        {/* Logo/Nom avec responsive */}
-        <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl px-5 font-bold">
-          {/* Version MOBILE/TABLETTE : Retour à la ligne */}
-          <span className="flex flex-col sm:hidden">
-            <Highlight>Sulyvann</Highlight>
-            <span>Dain</span>
-          </span>
+        {/* Logo/Nom - CONDITIONNEL AVEC REACT */}
+        <h2 className="text-base sm:text-xl md:text-2xl lg:text-3xl px-3 sm:px-5 font-bold">
 
-          {/* Version DESKTOP : Sur une ligne avec espace */}
-          <span className="hidden sm:flex sm:flex-row sm:items-center sm:gap-3">
-            <Highlight>Sulyvann</Highlight>
-            <span>Dain</span>
-          </span>
+          {/* Très petits mobiles (< 475px) */}
+          {screenSize === 'xs' && (
+            <span className="flex flex-col">
+              <Highlight>S.</Highlight>
+              <span>Dain</span>
+            </span>
+          )}
+
+          {/* Mobiles standards (475px - 639px) */}
+          {screenSize === 'sm' && (
+            <span className="flex flex-col">
+              <Highlight>Sulyvann</Highlight>
+              <span>Dain</span>
+            </span>
+          )}
+
+          {/* Tablette/Desktop (≥ 640px) */}
+          {screenSize === 'lg' && (
+            <span className="flex flex-row items-center gap-3">
+              <Highlight>Sulyvann</Highlight>
+              <span>Dain</span>
+            </span>
+          )}
+
         </h2>
 
         {/* Menu navigation */}
