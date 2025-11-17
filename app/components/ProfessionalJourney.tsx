@@ -291,7 +291,7 @@ export default function ProfessionalJourney() {
             ═══════════════════════════════════════════ */}
         <div className="mb-20">
           <h3 className="text-2xl font-bold mb-8">
-            Compétences Transférables de Mon Parcours
+            Mes diplômes et expérience
           </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
