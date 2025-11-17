@@ -148,48 +148,73 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
           </motion.div>
         </div>
 
-        {/* ═══════════════════════════════════════════
-            STATS VISUELLES - RESPONSIVE GRID
-            ═══════════════════════════════════════════ */}
+
+        {/* STATS COMPACTES - CHIFFRES DANS ICÔNES*/}
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="grid grid-cols-3 gap-3 sm:gap-6  sm:mt-12  border-y  border-gray-300 dark:border-gray-700 mb-8 sm:mb-10 "
+          transition={{ delay: 0.7 }}
+          className="flex flex-wrap justify-evenly items-center gap-6 sm:gap-8 mt-8 mb-10"
         >
-          {/* Stat 1 */}
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full mb-2">
-              <span className="text-lg sm:text-xl">🚀</span>
+          {/* Stat 1 : Projets */}
+          <div className="flex flex-col items-center gap-2">
+            {/* Icône avec chiffre */}
+            <div className="relative group">
+              {/* Shadow coloré */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+
+              {/* Icône */}
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                <span className="text-xs sm:text-sm text-white/80 font-semibold">Projets</span>
+                <span className="text-2xl sm:text-3xl font-bold text-white">3+</span>
+              </div>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-[var(--color-accent)]">3+</div>
-            <div className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mt-1">
-              Projets
-            </div>
+
+            {/* Description */}
+            <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
+              Réalisés
+            </span>
           </div>
 
-          {/* Stat 2 */}
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mb-2">
-              <span className="text-lg sm:text-xl">👥</span>
+          {/* Stat 2 : Followers GitHub */}
+          <div className="flex flex-col items-center gap-2">
+            {/* Icône avec chiffre */}
+            <div className="relative group">
+              {/* Shadow coloré */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+
+              {/* Icône */}
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                <span className="text-xs sm:text-sm text-white/80 font-semibold">GitHub</span>
+                <span className="text-2xl sm:text-3xl font-bold text-white">{githubFollowers}</span>
+              </div>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-[var(--color-accent)]">
-              {githubFollowers}
-            </div>
-            <div className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mt-1">
+
+            {/* Description */}
+            <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
               Followers
-            </div>
+            </span>
           </div>
 
-          {/* Stat 3 */}
-          <div className="text-center">
-            <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full mb-2">
-              <span className="text-lg sm:text-xl">⚡</span>
+          {/* Stat 3 : Technologies */}
+          <div className="flex flex-col items-center gap-2">
+            {/* Icône avec chiffre */}
+            <div className="relative group">
+              {/* Shadow coloré */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity" />
+
+              {/* Icône */}
+              <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+                <span className="text-xs sm:text-sm text-white/80 font-semibold">Stack</span>
+                <span className="text-2xl sm:text-3xl font-bold text-white">9</span>
+              </div>
             </div>
-            <div className="text-xl sm:text-2xl font-bold text-[var(--color-accent)]">9</div>
-            <div className="text-[10px] sm:text-xs text-gray-600 dark:text-gray-400 mt-1">
-              Technos
-            </div>
+
+            {/* Description */}
+            <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
+              Technologies
+            </span>
           </div>
         </motion.div>
       </motion.div>
