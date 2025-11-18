@@ -37,7 +37,7 @@ export default function ThemeToggle() {
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <div className="relative">
+    <div className="relative z-20">
       {/* Badge "NEW" animé */}
       <AnimatePresence>
         {showBadge && (
@@ -57,7 +57,7 @@ export default function ThemeToggle() {
                 ease: "easeInOut"
               }
             }}
-            className="absolute -top-2 -right-2 z-10"
+            className="absolute -top-2 -right-2 z-30  border-4 border-red-500"
           >
             <div className="bg-gradient-to-r from-red-500 to-pink-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-lg border-2 border-white dark:border-gray-800">
               NEW

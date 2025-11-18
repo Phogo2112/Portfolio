@@ -97,9 +97,9 @@ export default function ProjectCard({
           </h3>
 
           {/* Description */}
-          <p className="text-gray-700 text-base mb:text-[12px] dark:text-gray-300 mb-4 text-justify flex-grow">
+          <div className="text-gray-700 text-base mb:text-[12px] dark:text-gray-300 mb-4 text-justify flex-grow">
             {description}
-          </p>
+          </div>
 
           {/* Section images */}
           <div

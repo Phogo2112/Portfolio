@@ -3,7 +3,6 @@ import ProfessionalJourney from "./components/ProfessionalJourney";
 import ProjectCard from "./components/Cards";
 import NavBar from "./components/NavBar";
 import Presentation from "./components/Presentation";
-
 import Footer from "./components/Footer";
 import ContactForm from "./components/Contact";
 import { getProjectImages, ProjectsData } from "./data/Projects";

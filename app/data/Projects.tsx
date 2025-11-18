@@ -29,8 +29,7 @@ export const ProjectsData: Project[] = [
     description: (
       <>
         <p>
-          L'objectif était de réaliser un site vitrine complet pour un
-          service B2C.Le défi n'était pas seulement technique, mais aussi commercial :
+          L'objectif était de réaliser un site vitrine complet. Le défi n'était pas seulement technique, mais aussi commercial :
           assurer une présence en ligne professionnelle et générer de
           la visibilité locale à partir de zéro.
         </p>
@@ -41,11 +40,13 @@ export const ProjectsData: Project[] = [
             de développement en autodidacte</strong>.
         </p>
         <br />
-        <h4 className=""><strong>L'objectif de la création de ce projet :</strong></h4>
-        <p>
-          allier une solution technique robuste à une
-          stratégie SEO locale.
-        </p>
+        <div>
+          <h4 className=""><strong>L'objectif de la création de ce projet :</strong></h4>
+          <p>
+            allier une solution technique robuste à une
+            stratégie SEO locale.
+          </p>
+        </div>
       </>
     ),
 
