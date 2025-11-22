@@ -88,7 +88,6 @@ export default function NavBar() {
           )}
 
         </h2>
-
         {/* Menu navigation */}
         <div className="container mx-auto px-4 flex justify-end">
           <ul className="flex items-center justify-center gap-4 text-black dark:text-white h-8 text-[10px] sm:text-base md:text-[16px] lg:text-[18px]">

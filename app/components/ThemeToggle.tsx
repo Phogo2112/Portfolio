@@ -57,7 +57,7 @@ export default function ThemeToggle() {
                 ease: "easeInOut"
               }
             }}
-            className="absolute -top-2 -right-2 z-30  border-4 border-red-500"
+            className="absolute -top-2 -right-2 z-30"
           >
             <div className="bg-gradient-to-r from-red-500 to-pink-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow-lg border-2 border-white dark:border-gray-800">
               NEW
