@@ -99,7 +99,7 @@ export const ProjectsData: Project[] = [
         </>
       ),
     images: ["/QRcode/codeQRcode.PNG"],
-    githubUrl: "https://github.com/Phogo2112/Generateur-QRcode",
+    githubUrl: "https://github.com/Phogo2112/Qrcode",
     tags: ["Python"],
   },
 ];
