@@ -196,7 +196,7 @@ export const ProjectsData: Project[] = [
     ),
     images: [
       "/portfolio/Presentation-White.png",
-      "Portfolio/Presentation-Black.png",
+      "/portfolio/Presentation-Black.png",
     ],
     githubUrl: "https://github.com/Phogo2112/Portfolio.git",
     tags: ["Next.js", "Tailwind"],
