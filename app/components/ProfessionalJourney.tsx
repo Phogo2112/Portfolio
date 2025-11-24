@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { motion } from "framer-motion";
 import {
@@ -10,17 +10,16 @@ import {
   Coffee,
   BookOpen,
   CheckCircle,
-  Sparkles
+  Sparkles,
 } from "lucide-react";
 
-// Types
 type Skill = string;
 type Motivation = string;
 
 type Experience = {
   id: string;
   title: string;
-  type: 'past' | 'current' | 'future';
+  type: "past" | "current" | "future";
   icon: React.ReactNode;
   period?: string;
   skills: Skill[];
@@ -30,7 +29,6 @@ type Experience = {
 };
 
 const experiences: Experience[] = [
-
   // Formations actuelle
   {
     id: "adaTechSchool",
@@ -38,23 +36,24 @@ const experiences: Experience[] = [
     type: "current",
     icon: <GraduationCap className="w-8 h-8" />,
     period: " septembre 2025 à Février 2026",
-    description: "Formation intensive en développement full-stack avec pédagogie par projets",
+    description:
+      "Formation intensive en développement full-stack avec pédagogie par projets",
     skills: [
       "Programmation (Python, JavaScript, TypeScript)",
       "Frameworks modernes (React, Next.js, Django)",
       "Travail en équipe agile",
       "Architecture logicielle",
       "Base de données (PostgreSQL)",
-      "DevOps & déploiement"
+      "DevOps & déploiement",
     ],
     motivations: [
       "Innovation technologique",
       "Apprentissage continu",
       "Résolution de problèmes complexes",
       "Collaboration en équipe",
-      "Réalisation de projets concrets"
+      "Réalisation de projets concrets",
     ],
-    color: "from-blue-500 to-cyan-500"
+    color: "from-blue-500 to-cyan-500",
   },
   {
     id: "developpeurAutodidacte",
@@ -68,17 +67,16 @@ const experiences: Experience[] = [
       "Documentation technique",
       "Debugging avancé",
       "Open source contribution",
-      "Adaptabilité technologique"
+      "Adaptabilité technologique",
     ],
     motivations: [
       "Curiosité intellectuelle",
       "Passion pour la tech",
       "Autonomie dans l'apprentissage",
-      "Partage de connaissances"
+      "Partage de connaissances",
     ],
-    color: "from-purple-500 to-pink-500"
+    color: "from-purple-500 to-pink-500",
   },
-
 
   // Expériences passée
   {
@@ -92,14 +90,14 @@ const experiences: Experience[] = [
       "Lecture de schémas techniques",
       "Diagnostic de pannes",
       "Écoute du client",
-      "Respect des normes de sécurité"
+      "Respect des normes de sécurité",
     ],
     motivations: [
       "Précision et rigueur",
       "Résolution de problèmes",
-      "Sécurité avant tout"
+      "Sécurité avant tout",
     ],
-    color: "from-yellow-500 to-orange-500"
+    color: "from-yellow-500 to-orange-500",
   },
   {
     id: "plombier",
@@ -112,13 +110,13 @@ const experiences: Experience[] = [
       "Lecture de plans",
       "Installation de tuyauterie",
       "Cintrage de tuyaux",
-      "Brasure et soudure"
+      "Brasure et soudure",
     ],
     motivations: [
       "Travail manuel minutieux",
-      "Résolution de problèmes pratiques"
+      "Résolution de problèmes pratiques",
     ],
-    color: "from-blue-600 to-indigo-600"
+    color: "from-blue-600 to-indigo-600",
   },
   {
     id: "serveur",
@@ -130,13 +128,10 @@ const experiences: Experience[] = [
     skills: [
       "Communication interpersonnelle",
       "Gestion du stress",
-      "Adaptabilité"
+      "Adaptabilité",
     ],
-    motivations: [
-      "Contact humain",
-      "Réactivité"
-    ],
-    color: "from-green-500 to-teal-500"
+    motivations: ["Contact humain", "Réactivité"],
+    color: "from-green-500 to-teal-500",
   },
   {
     id: "cuisinier",
@@ -148,13 +143,10 @@ const experiences: Experience[] = [
     skills: [
       "Organisation et gestion du temps",
       "Travail sous pression",
-      "Créativité"
+      "Créativité",
     ],
-    motivations: [
-      "Précision dans l'exécution",
-      "Satisfaction du client"
-    ],
-    color: "from-red-500 to-pink-500"
+    motivations: ["Précision dans l'exécution", "Satisfaction du client"],
+    color: "from-red-500 to-pink-500",
   },
 ];
 
@@ -164,12 +156,12 @@ const globalSkills = [
   { name: "Cybersécurité", icon: "🔒", level: 60 },
   { name: "DevOps & CI/CD", icon: "⚙️", level: 65 },
   { name: "UI/UX Design", icon: "🎨", level: 80 },
-  { name: "Cloud Computing", icon: "☁️", level: 55 }
+  { name: "Cloud Computing", icon: "☁️", level: 55 },
 ];
 
 export default function ProfessionalJourney() {
-  const currentExperiences = experiences.filter(e => e.type === 'current');
-  const pastExperiences = experiences.filter(e => e.type === 'past');
+  const currentExperiences = experiences.filter((e) => e.type === "current");
+  const pastExperiences = experiences.filter((e) => e.type === "past");
 
   return (
     <section className="py-20 px-4 sm:px-6  from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
@@ -184,7 +176,8 @@ export default function ProfessionalJourney() {
             Mon <span className="text-[var(--color-accent)]">Parcours</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            De l'artisanat au développement web : un parcours riche en compétences transférables
+            De l'artisanat au développement web : un parcours riche en
+            compétences transférables
           </p>
         </motion.div>
 
@@ -205,7 +198,8 @@ export default function ProfessionalJourney() {
                 transition={{ delay: index * 0.2 }}
                 className="relative group"
               >
-                <div className="absolute inset-0 bg-gradient-to-r opacity-20 group-hover:opacity-30 rounded-2xl blur-xl transition-opacity"
+                <div
+                  className="absolute inset-0 bg-gradient-to-r opacity-20 group-hover:opacity-30 rounded-2xl blur-xl transition-opacity"
                   style={{
                     backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
                   }}
@@ -214,7 +208,9 @@ export default function ProfessionalJourney() {
                 <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border-2 border-[var(--color-accent)] hover:shadow-2xl transition-all">
                   {/* Header */}
                   <div className="flex items-start gap-4 mb-6">
-                    <div className={`p-4 rounded-xl bg-gradient-to-r ${exp.color} text-white`}>
+                    <div
+                      className={`p-4 rounded-xl bg-gradient-to-r ${exp.color} text-white`}
+                    >
                       {exp.icon}
                     </div>
                     <div className="flex-1">
@@ -264,7 +260,9 @@ export default function ProfessionalJourney() {
                           key={motivation}
                           className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
                         >
-                          <span className="text-[var(--color-accent)] mt-1">•</span>
+                          <span className="text-[var(--color-accent)] mt-1">
+                            •
+                          </span>
                           {motivation}
                         </li>
                       ))}
@@ -293,7 +291,9 @@ export default function ProfessionalJourney() {
                 whileHover={{ scale: 1.05 }}
                 className="bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700"
               >
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${exp.color} flex items-center justify-center text-white mb-4`}>
+                <div
+                  className={`w-12 h-12 rounded-lg bg-gradient-to-r ${exp.color} flex items-center justify-center text-white mb-4`}
+                >
                   {exp.icon}
                 </div>
 
@@ -314,7 +314,10 @@ export default function ProfessionalJourney() {
                 {/* Compétences clés */}
                 <div className="space-y-1">
                   {exp.skills.slice(0, 3).map((skill) => (
-                    <div key={skill} className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-400">
+                    <div
+                      key={skill}
+                      className="flex items-start gap-2 text-xs text-gray-600 dark:text-gray-400"
+                    >
                       <span className="text-[var(--color-accent)]">✓</span>
                       {skill}
                     </div>
@@ -354,14 +357,10 @@ export default function ProfessionalJourney() {
                     {skill.name}
                   </h4>
                 </div>
-
-
-
               </motion.div>
             ))}
           </div>
         </motion.div>
-
       </div>
     </section>
   );
