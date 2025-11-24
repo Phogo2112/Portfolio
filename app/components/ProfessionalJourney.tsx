@@ -181,7 +181,7 @@ export default function ProfessionalJourney() {
           </p>
         </motion.div>
 
-        {/* Formations actuelle (Highlight)*/}
+        {/* Formations actuelle*/}
         <div className="mb-20">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-2">
             <Sparkles className="text-[var(--color-accent)]" />
@@ -205,7 +205,7 @@ export default function ProfessionalJourney() {
                   }}
                 />
 
-                <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border-2 border-[var(--color-accent)] hover:shadow-2xl transition-all">
+                <div className="relative bg-gray-800 rounded-2xl p-8 shadow-xl border-2 border-[var(--color-accent)] hover:shadow-2xl transition-all">
                   {/* Header */}
                   <div className="flex items-start gap-4 mb-6">
                     <div
@@ -214,7 +214,7 @@ export default function ProfessionalJourney() {
                       {exp.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
+                      <h4 className="text-2xl font-bold text-white dark:text-white mb-1">
                         {exp.title}
                       </h4>
                       {exp.period && (
@@ -226,13 +226,13 @@ export default function ProfessionalJourney() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  <p className="text-white dark:text-gray-400 mb-6">
                     {exp.description}
                   </p>
 
                   {/* Compétences */}
                   <div className="mb-6">
-                    <h5 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                    <h5 className="font-semibold text-white mb-3 flex items-center gap-2">
                       <Code className="w-4 h-4 text-[var(--color-accent)]" />
                       Compétences acquises
                     </h5>
@@ -240,7 +240,7 @@ export default function ProfessionalJourney() {
                       {exp.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300"
+                          className="px-3 py-1 bg-gray-600 dark:bg-gray-700 rounded-full text-sm text-white"
                         >
                           {skill}
                         </span>
@@ -250,7 +250,7 @@ export default function ProfessionalJourney() {
 
                   {/* Motivations */}
                   <div>
-                    <h5 className="font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                    <h5 className="font-semibold text-white mb-3 flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-[var(--color-accent)]" />
                       Appétences
                     </h5>
@@ -258,7 +258,7 @@ export default function ProfessionalJourney() {
                       {exp.motivations.map((motivation) => (
                         <li
                           key={motivation}
-                          className="flex items-start gap-2 text-gray-600 dark:text-gray-400"
+                          className="flex items-start gap-2 text-white dark:text-gray-400"
                         >
                           <span className="text-[var(--color-accent)] mt-1">
                             •
@@ -297,17 +297,17 @@ export default function ProfessionalJourney() {
                   {exp.icon}
                 </div>
 
-                <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-2">
+                <h4 className="font-bold text-lg text-white dark:text-white mb-2">
                   {exp.title}
                 </h4>
 
                 {exp.period && (
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+                  <p className="text-xs text-[var(--color-accent)] mb-3">
                     {exp.period}
                   </p>
                 )}
 
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-sm text-white dark:text-gray-400 mb-4">
                   {exp.description}
                 </p>
 
@@ -335,7 +335,7 @@ export default function ProfessionalJourney() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8"
+          className="bg-gray-800 rounded-2xl p-8"
         >
           <h3 className="text-2xl text-white font-bold mb-8 text-center">
             Compétences en Cours de Développement
@@ -349,13 +349,11 @@ export default function ProfessionalJourney() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md"
+                className="bg-slate-400 border-white rounded-xl p-6 shadow-md"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{skill.icon}</span>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">
-                    {skill.name}
-                  </h4>
+                  <h4 className="font-semibold text-white ">{skill.name}</h4>
                 </div>
               </motion.div>
             ))}

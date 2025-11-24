@@ -1,4 +1,3 @@
-
 "use client";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -8,8 +7,6 @@ export default function Footer() {
   return (
     <footer className="relative">
       {/* Boutons sociaux */}
-
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +45,7 @@ export default function Footer() {
           {/* Effet brillant animé */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-            animate={{ x: ['-100%', '100%'] }}
+            animate={{ x: ["-100%", "100%"] }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           />
 
@@ -90,7 +87,7 @@ export default function Footer() {
           {/* Effet brillant animé */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-            animate={{ x: ['-100%', '100%'] }}
+            animate={{ x: ["-100%", "100%"] }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           />
 
@@ -109,7 +106,6 @@ export default function Footer() {
       </motion.div>
 
       {/* COPYRIGHT */}
-
 
       <div className="border-t border-gray-200 dark:border-gray-800">
         <p className="text-center py-6 text-sm text-gray-600 dark:text-gray-400">

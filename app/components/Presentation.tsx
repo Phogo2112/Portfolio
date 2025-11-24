@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect, useState } from "react";
 import { FaPython, FaReact } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -20,15 +20,51 @@ type PresentationProps = {
 
 export default function Presentation({ githubFollowers }: PresentationProps) {
   const tech = [
-    { name: "Python", icon: <FaPython className="text-yellow-400" />, url: 'https://developer.mozilla.org/en-US/docs/Glossary/Python' },
-    { name: "Django", icon: <SiDjango className="text-green-500" />, url: 'https://developer.mozilla.org/fr/docs/Learn_web_development/Extensions/Server-side/Django' },
-    { name: "React", icon: <FaReact className="text-cyan-400" />, url: 'https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started' },
-    { name: "Next.js", icon: <SiNextdotjs className="text-gray-200" />, url: 'https://nextjs.org/docs' },
-    { name: "Tailwind", icon: <SiTailwindcss className="text-sky-400" />, url: 'https://v2.tailwindcss.com/docs' },
-    { name: "HTML", icon: <SiHtml5 className="text-orange-500" />, url: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
-    { name: "CSS", icon: <SiCss3 className="text-blue-500" />, url: 'https://developer.mozilla.org/fr/docs/Web/CSS' },
-    { name: "JavaScript", icon: <SiJavascript className="text-yellow-300" />, url: 'https://developer.mozilla.org/fr/docs/Web/JavaScript' },
-    { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400" />, url: 'https://www.postgresql.org/docs' },
+    {
+      name: "Python",
+      icon: <FaPython className="text-yellow-400" />,
+      url: "https://developer.mozilla.org/en-US/docs/Glossary/Python",
+    },
+    {
+      name: "Django",
+      icon: <SiDjango className="text-green-500" />,
+      url: "https://developer.mozilla.org/fr/docs/Learn_web_development/Extensions/Server-side/Django",
+    },
+    {
+      name: "React",
+      icon: <FaReact className="text-cyan-400" />,
+      url: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Frameworks_libraries/React_getting_started",
+    },
+    {
+      name: "Next.js",
+      icon: <SiNextdotjs className="text-gray-200" />,
+      url: "https://nextjs.org/docs",
+    },
+    {
+      name: "Tailwind",
+      icon: <SiTailwindcss className="text-sky-400" />,
+      url: "https://v2.tailwindcss.com/docs",
+    },
+    {
+      name: "HTML",
+      icon: <SiHtml5 className="text-orange-500" />,
+      url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    },
+    {
+      name: "CSS",
+      icon: <SiCss3 className="text-blue-500" />,
+      url: "https://developer.mozilla.org/fr/docs/Web/CSS",
+    },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript className="text-yellow-300" />,
+      url: "https://developer.mozilla.org/fr/docs/Web/JavaScript",
+    },
+    {
+      name: "PostgreSQL",
+      icon: <SiPostgresql className="text-blue-400" />,
+      url: "https://www.postgresql.org/docs",
+    },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -58,7 +94,6 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
         className="max-w-4xl mx-auto mt-6 sm:mt-10 px-4 sm:px-6"
       >
         <div className="space-y-6 sm:space-y-8">
-
           {/* Bloc 1 : Accroche technique */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -70,9 +105,11 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
               <Code2 className="text-white" size={20} />
             </div>
             <p className="text-sm sm:text-base lg:text-lg leading-relaxed flex-1">
-              Développeur Full-Stack en reconversion, je construis des applications web
-              modernes et fonctionnelles avec <Highlight variant="tech">Django</Highlight>/
-              <Highlight variant="tech">Next.js</Highlight> et <Highlight variant="tech">PostgreSQL</Highlight>
+              Développeur Full-Stack en reconversion, je construis des
+              applications web modernes et fonctionnelles avec{" "}
+              <Highlight variant="tech">Django</Highlight>/
+              <Highlight variant="tech">Next.js</Highlight> et{" "}
+              <Highlight variant="tech">PostgreSQL</Highlight>
             </p>
           </motion.div>
 
@@ -91,13 +128,21 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
                 Apprentissage autodidacte
               </h4>
               <p className="text-sm sm:text-base lg:text-lg leading-relaxed">
-                Initié au code il y a <strong>un an</strong> via des tutoriels YouTube et la formation
-                <Highlight variant="tech"> Believemy</Highlight> (SaaS), j'ai rapidement mis en pratique
-                mes connaissances en <Highlight variant="tech">Python</Highlight> et
-                <Highlight variant="tech"> Django</Highlight>. En parallèle, j'ai développé des
-                <strong> outils professionnels</strong> : générateur de QR codes et un site web pour mon entreprise... Cette approche
-                <Highlight variant="warning"> learning by doing !</Highlight> m'a appris à transformer
-                des besoins métier en solutions fonctionnelles.
+                Initié au code il y a <strong>un an</strong> via des tutoriels
+                YouTube et la formation
+                <Highlight variant="tech"> Believemy</Highlight> (SaaS), j'ai
+                rapidement mis en pratique mes connaissances en{" "}
+                <Highlight variant="tech">Python</Highlight> et
+                <Highlight variant="tech"> Django</Highlight>. En parallèle,
+                j'ai développé des
+                <strong> outils professionnels</strong> : générateur de QR codes
+                et un site web pour mon entreprise... Cette approche
+                <Highlight variant="warning">
+                  {" "}
+                  learning by doing !
+                </Highlight>{" "}
+                m'a appris à transformer des besoins métier en solutions
+                fonctionnelles.
               </p>
             </div>
           </motion.div>
@@ -113,10 +158,13 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
               <GraduationCap className="text-white" size={20} />
             </div>
             <p className="text-sm sm:text-base lg:text-lg leading-relaxed flex-1">
-              Formé à <strong className="text-[var(--color-accent)]">Ada Tech School Nantes</strong>,
-              je maîtrise le cycle complet de développement : de la conception d'API REST
-              avec Django à la création d'interfaces utilisateur réactives avec Next.js
-              et Tailwind CSS.
+              Formé à{" "}
+              <strong className="text-[var(--color-accent)]">
+                Ada Tech School Nantes
+              </strong>
+              , je maîtrise le cycle complet de développement : de la conception
+              d'API REST avec Django à la création d'interfaces utilisateur
+              réactives avec Next.js et Tailwind CSS.
             </p>
           </motion.div>
 
@@ -144,7 +192,6 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
           </motion.div>
         </div>
 
-
         {/* STATS COMPACTES - CHIFFRES DANS ICÔNES*/}
 
         <motion.div
@@ -160,8 +207,12 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
 
               {/* Icône */}
               <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                <span className="text-xs sm:text-sm text-white/80 font-semibold">Projets</span>
-                <span className="text-2xl sm:text-3xl font-bold text-white">3+</span>
+                <span className="text-xs sm:text-sm text-white/80 font-semibold">
+                  Projets
+                </span>
+                <span className="text-2xl sm:text-3xl font-bold text-white">
+                  3+
+                </span>
               </div>
             </div>
             <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
@@ -176,8 +227,12 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
 
               {/* Icône */}
               <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                <span className="text-xs sm:text-sm text-white/80 font-semibold">GitHub</span>
-                <span className="text-2xl sm:text-3xl font-bold text-white">{githubFollowers}</span>
+                <span className="text-xs sm:text-sm text-white/80 font-semibold">
+                  GitHub
+                </span>
+                <span className="text-2xl sm:text-3xl font-bold text-white">
+                  {githubFollowers}
+                </span>
               </div>
             </div>
             <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
@@ -192,8 +247,12 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
 
               {/* Icône */}
               <div className="relative w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex flex-col items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                <span className="text-xs sm:text-sm text-white/80 font-semibold">Stack</span>
-                <span className="text-2xl sm:text-3xl font-bold text-white">9</span>
+                <span className="text-xs sm:text-sm text-white/80 font-semibold">
+                  Stack
+                </span>
+                <span className="text-2xl sm:text-3xl font-bold text-white">
+                  9
+                </span>
               </div>
             </div>
             <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-medium">
@@ -206,7 +265,8 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
       {/* ═══════════════════════════════════════════
           GRILLE DES TECHNOLOGIES - RESPONSIVE
           ═══════════════════════════════════════════ */}
-      <div className="
+      <div
+        className="
   grid 
   grid-cols-2           
   xs:grid-cols-3        
@@ -216,7 +276,8 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
   place-items-center 
   gap-3 sm:gap-4 lg:gap-6 
   px-4
-">
+"
+      >
         {tech.map((items, index) => (
           <div
             key={items.name}
@@ -225,13 +286,13 @@ export default function Presentation({ githubFollowers }: PresentationProps) {
         text-xs sm:text-sm md:text-base lg:text-xl font-semibold
         px-2 py-3 sm:px-3 sm:py-4 rounded overflow-hidden group
         w-full max-w-[160px]
-        bg-gray-100/60 dark:bg-transparent border
+        bg-grey-400 border
         dark:border-transparent
         transition-opacity duration-300
         ${activeIndex === index ? "opacity-90" : "opacity-30"}
       `}
           >
-            <span className="z-10 font-tech-700">
+            <span className="z-10 font-tech-700 ">
               <a href={items.url} target="_blank" rel="noopener noreferrer">
                 {items.name}
               </a>
