@@ -349,7 +349,7 @@ export default function ProfessionalJourney() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-slate-400 border-white rounded-xl p-6 shadow-md"
+                className="bg-gray-800 border-white border-3 rounded-xl p-6 shadow-md"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{skill.icon}</span>
